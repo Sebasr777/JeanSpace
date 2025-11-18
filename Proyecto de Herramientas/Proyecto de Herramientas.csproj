@@ -86,6 +86,12 @@
     <Compile Include="EditarProducto.Designer.cs">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarUsuarioDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarUsuarioDetalle.Designer.cs">
+      <DependentUpon>EditarUsuarioDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarProducto.resx">
       <DependentUpon>EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarUsuarioDetalle.resx">
+      <DependentUpon>EditarUsuarioDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarUsuarios.resx">
       <DependentUpon>EditarUsuarios.cs</DependentUpon>

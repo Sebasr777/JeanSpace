@@ -64,6 +64,7 @@ namespace Proyecto_de_Herramientas
 
             dgvUsuarios.DataSource = lista;
         }
+ 
 
         private void ConsultaUsuarios_Load(object sender, EventArgs e)
         {

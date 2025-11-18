@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Proyecto_de_Herramientas.Proyecto_de_Herramientas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -23,6 +25,7 @@ namespace Proyecto_de_Herramientas
         }
         private void MostrarDatos()
         {
+            // Mostrar datos en los TextBox
             txtNombre.Text = usuario.Nombre;
             txtUsuarioLogin.Text = usuario.UsuarioLogin;
             txtRol.Text = usuario.Rol;
@@ -30,24 +33,33 @@ namespace Proyecto_de_Herramientas
             txtTelefono.Text = usuario.Telefono;
             txtEmail.Text = usuario.Email;
 
-            // Reconstruir ruta absoluta desde la relativa guardada
-            string carpetaProyecto = Directory.GetParent(Application.StartupPath).Parent.Parent.FullName;
-            string rutaImagen = Path.Combine(carpetaProyecto, usuario.ImagenPath);
+            // Reconstruir la ruta absoluta de la imagen
+            string carpetaProyecto = RutaProyectoHelper.ObtenerRaizProyecto();
 
-            if (File.Exists(rutaImagen))
+            string rutaImagen = Path.Combine(carpetaProyecto, usuario.ImagenPath);
+          
+
+            try
             {
-                pictureBox1.Image = Image.FromFile(rutaImagen);
-                
+                using (FileStream fs = new FileStream(rutaImagen, FileMode.Open, FileAccess.Read))
+                {
+                    pictureBox1.Image = Image.FromStream(fs);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                pictureBox1.Image = null;
-                MessageBox.Show("No se encontró la imagen en: " + rutaImagen);
+                MessageBox.Show("Error al abrir imagen con FileStream:\n" + ex.Message);
             }
+
+
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        
+
+  
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_de_Herramientas.Proyecto_de_Herramientas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -123,6 +124,7 @@ namespace Proyecto_de_Herramientas
 
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
         {
+
             string carpetaImagenes = Path.Combine(Directory.GetParent(Application.StartupPath).Parent.Parent.FullName, "Images");
 
             OpenFileDialog ofd = new OpenFileDialog
@@ -139,8 +141,10 @@ namespace Proyecto_de_Herramientas
                 string extension = Path.GetExtension(rutaOrigen);
                 string nombreArchivo = $"{nombreUsuario}{extension}";
 
-                string carpetaDestino = Path.Combine(Application.StartupPath, "Images", "Usuarios");
-                Directory.CreateDirectory(carpetaDestino);
+                string carpetaProyecto = RutaProyectoHelper.ObtenerRaizProyecto();
+                string carpetaDestino = Path.Combine(carpetaProyecto, "Images", "Usuarios");
+
+
 
                 string rutaDestino = Path.Combine(carpetaDestino, nombreArchivo);
                 File.Copy(rutaOrigen, rutaDestino, true);

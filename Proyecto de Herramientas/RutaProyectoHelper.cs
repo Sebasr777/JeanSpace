@@ -12,110 +12,95 @@ namespace Proyecto_de_Herramientas
     using System.Drawing;
 
 
-
-    namespace Proyecto_de_Herramientas
-    {
-        public static class RutaProyectoHelper
+        namespace Proyecto_de_Herramientas
         {
-            public static string ObtenerRaizProyecto()
+            public static class RutaProyectoHelper
             {
-                string carpetaActual = Application.StartupPath;
-
-                while (carpetaActual != null)
+                public static string ObtenerRaizProyecto()
                 {
-                    string posibleRuta = Path.Combine(carpetaActual, "Images", "Usuarios");
-                    if (Directory.Exists(posibleRuta))
+                    string carpetaActual = Application.StartupPath;
+
+                    while (carpetaActual != null)
                     {
-                        return carpetaActual;
+                        string posibleRuta = Path.Combine(carpetaActual, "Images", "Usuarios");
+                        if (Directory.Exists(posibleRuta))
+                        {
+                            return carpetaActual;
+                        }
+
+                        carpetaActual = Directory.GetParent(carpetaActual)?.FullName;
                     }
 
-                    carpetaActual = Directory.GetParent(carpetaActual)?.FullName;
+                    // Si no se encuentra, usar la carpeta de inicio como fallback
+                    return Application.StartupPath;
+                }
+            }
+
+            public static class ImagenHelper
+            {
+                // Usuarios
+                public static string ObtenerRutaImagenUsuario(string nombreArchivo)
+                {
+                    string carpetaProyecto = RutaProyectoHelper.ObtenerRaizProyecto();
+                    string carpetaDestino = Path.Combine(carpetaProyecto, "Images", "Usuarios");
+                    Directory.CreateDirectory(carpetaDestino);
+                    return Path.Combine(carpetaDestino, nombreArchivo);
                 }
 
-                // Si no se encuentra, usar la carpeta de inicio como fallback
-                return Application.StartupPath;
-            }
-        }
-
-        public static class ImagenHelper
-        {
-            public static string ObtenerRutaImagenUsuario(string nombreArchivo)
-            {
-                // Carpeta raíz del proyecto
-                string carpetaProyecto = RutaProyectoHelper.ObtenerRaizProyecto();
-
-                // Carpeta destino para las imágenes de usuarios
-                string carpetaDestino = Path.Combine(carpetaProyecto, "Images", "Usuarios");
-
-                // Crear carpeta si no existe
-                Directory.CreateDirectory(carpetaDestino);
-
-                // Ruta completa del archivo
-                string rutaCompleta = Path.Combine(carpetaDestino, nombreArchivo);
-
-                return rutaCompleta;
-            }
-
-            public static bool ArchivoDisponible(string ruta)
-            {
-                try
+                public static string ObtenerRutaRelativa(string nombreArchivo)
                 {
-                    using (FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read, FileShare.None))
+                    return Path.Combine("Images", "Usuarios", nombreArchivo).Replace("\\", "/");
+                }
+
+                // Productos
+                public static string ObtenerRutaImagenProducto(string nombreArchivo)
+                {
+                    string carpetaProyecto = RutaProyectoHelper.ObtenerRaizProyecto();
+                    string carpetaDestino = Path.Combine(carpetaProyecto, "Images", "Productos");
+                    Directory.CreateDirectory(carpetaDestino);
+                    return Path.Combine(carpetaDestino, nombreArchivo);
+                }
+
+                public static string ObtenerRutaRelativaProducto(string nombreArchivo)
+                {
+                    return Path.Combine("Images", "Productos", nombreArchivo).Replace("\\", "/");
+                }
+
+                // Utilidades
+                public static bool ArchivoDisponible(string ruta)
+                {
+                    try
                     {
-                        // Si se puede abrir sin compartir, está disponible
-                        return true;
+                        using (FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read, FileShare.None))
+                        {
+                            return true;
+                        }
+                    }
+                    catch (IOException)
+                    {
+                        return false;
                     }
                 }
-                catch (IOException)
-                {
-                    return false;
-                }
-            }
 
-            public static void EliminarImagen(string rutaCompleta)
-            {
-                if (string.IsNullOrEmpty(rutaCompleta)) return;
-
-                try
+                public static void EliminarImagen(string rutaCompleta)
                 {
-                    if (File.Exists(rutaCompleta))
+                    if (string.IsNullOrEmpty(rutaCompleta)) return;
+
+                    try
                     {
-                        File.Delete(rutaCompleta);
+                        if (File.Exists(rutaCompleta))
+                        {
+                            File.Delete(rutaCompleta);
+                        }
+                    }
+                    catch (IOException ex)
+                    {
+                        MessageBox.Show("No se pudo eliminar la imagen anterior.\n\n" + ex.Message,
+                                        "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                catch (IOException ex)
-                {
-                    MessageBox.Show("No se pudo eliminar la imagen anterior.\n\n" + ex.Message,
-                                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
 
-            public static string ObtenerRutaRelativa(string nombreArchivo)
-            {
-                return Path.Combine("Images", "Usuarios", nombreArchivo);
-            }
-
-           
-
-            public static void LiberarImagen(PictureBox pic)
-            {
-                if (pic.Image != null)
-                {
-                    pic.Image.Dispose();
-                    pic.Image = null;
-                }
-
-                // Forzar liberación de recursos
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-            }
-
-            public static void CargarImagenSinBloqueo(PictureBox pic, string ruta)
-            {
-                if (string.IsNullOrEmpty(ruta) || !File.Exists(ruta))
-                    return;
-
-                try
+                public static void LiberarImagen(PictureBox pic)
                 {
                     if (pic.Image != null)
                     {
@@ -123,25 +108,39 @@ namespace Proyecto_de_Herramientas
                         pic.Image = null;
                     }
 
-                    using (FileStream fs = new FileStream(ruta, FileMode.Open, FileAccess.Read))
-                    {
-                        pic.Image = Image.FromStream(fs);
-                    }
-
-                    pic.SizeMode = PictureBoxSizeMode.Zoom;
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
                 }
-                catch (IOException ex)
+
+                public static void CargarImagenSinBloqueo(PictureBox pic, string ruta)
                 {
-                    MessageBox.Show("⚠️ No se pudo cargar la imagen.\n\n" + ex.Message,
-                                    "Error de acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (string.IsNullOrEmpty(ruta) || !File.Exists(ruta))
+                        return;
+
+                    try
+                    {
+                        if (pic.Image != null)
+                        {
+                            pic.Image.Dispose();
+                            pic.Image = null;
+                        }
+
+                        using (FileStream fs = new FileStream(ruta, FileMode.Open, FileAccess.Read))
+                        {
+                            pic.Image = Image.FromStream(fs);
+                        }
+
+                        pic.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                    catch (IOException ex)
+                    {
+                        MessageBox.Show("⚠️ No se pudo cargar la imagen.\n\n" + ex.Message,
+                                        "Error de acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-
-
-
-
         }
+
+
     }
 
-
-}

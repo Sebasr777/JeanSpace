@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,48 +24,75 @@ namespace Proyecto_de_Herramientas
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            string filtro = txtBuscar.Text.Trim();
+            
+        }
+        private void BuscarProductoPorID(int idProducto)
+        {
+            List<Producto> resultado = new List<Producto>();
 
-            var filtrados = DatosProductos.ListaProductos
-                .Where(p => p.ID.Contains(filtro))
-                .ToList();
+            using (SqlConnection conn = BDJeanStore.Conectar())
+            {
+                string sql = "SELECT IdProducto, Nombre, Talla, Color, Precio, Stock, ImagenPath FROM Productos WHERE IdProducto=@IdProducto";
 
-            dgvProductos.DataSource = null;
-            dgvProductos.DataSource = filtrados;
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdProducto", idProducto);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        { 
+                            dgvProductos.Visible = true;
+                            resultado.Add(new Producto
+                            {
+                                ID = reader.GetInt32(0),
+                                Nombre = reader.GetString(1),
+                                Talla = reader.GetString(2),
+                                Color = reader.GetString(3),
+                                Precio = reader.GetDecimal(4),
+                                Stock = reader.GetInt32(5),
+                                ImagenPath = reader.GetString(6)
+                            });
+                        }
+                        else
+                        {
+                            MessageBox.Show("❌ No se encontró ningún producto con ese ID.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+
+            dgvProductos.DataSource = resultado;
+            dgvProductos.Columns["ImagenPath"].Visible = false;
         }
 
 
-  
+
         private void EditarProducto_Load(object sender, EventArgs e)
         {
+
+            dgvProductos.AutoGenerateColumns = true;
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.ReadOnly = true;
             dgvProductos.Visible = false;
         }
 
     
         private void btnConsultar_Click_1(object sender, EventArgs e)
         {
-            string idBuscado = txtBuscar.Text.Trim();
-
-            if (string.IsNullOrEmpty(idBuscado))
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
-                MessageBox.Show("Ingresa un ID de producto para consultar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingresa un ID de producto.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var productoFiltrado = DatosProductos.ListaProductos
-                .Where(p => p.ID == idBuscado)
-                .ToList();
-
-            if (productoFiltrado.Count == 0)
+            if (!int.TryParse(txtBuscar.Text, out int idProducto))
             {
-                MessageBox.Show("No se encontró ningún producto con ese ID.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvProductos.Visible = false;
+                MessageBox.Show("El ID debe ser un número entero.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            dgvProductos.DataSource = null;
-            dgvProductos.DataSource = productoFiltrado;
-            dgvProductos.Visible = true;
+            BuscarProductoPorID(idProducto);
         }
 
         private void btnregresar_Click_1(object sender, EventArgs e)
@@ -75,65 +103,43 @@ namespace Proyecto_de_Herramientas
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            if (dgvProductos.DataSource == null || dgvProductos.Rows.Count == 0)
+            if (dgvProductos.CurrentRow == null)
             {
-                MessageBox.Show("No hay productos cargados para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Selecciona un producto para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            var productosMostrados = dgvProductos.DataSource as List<Producto>;
+            int idProducto = Convert.ToInt32(dgvProductos.CurrentRow.Cells["ID"].Value);
+            string nombre = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
 
-            if (productosMostrados == null || productosMostrados.Count != 1)
-            {
-                MessageBox.Show("Solo se puede eliminar un producto a la vez.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var productoAEliminar = productosMostrados[0];
-
-            var confirmacion = MessageBox.Show($"¿Eliminar el producto '{productoAEliminar.Nombre}' con REF {productoAEliminar.ID}?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
+            var confirmacion = MessageBox.Show($"¿Eliminar el producto '{nombre}'?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (confirmacion == DialogResult.Yes)
             {
-                DatosProductos.ListaProductos.RemoveAll(p => p.ID == productoAEliminar.ID);
-                PersistenciaProductos.GuardarProductos(DatosProductos.ListaProductos);
-
-                dgvProductos.DataSource = null;
-                dgvProductos.Visible = false;
-                txtBuscar.Clear();
+                using (SqlConnection conn = BDJeanStore.Conectar())
+                {
+                    string sql = "DELETE FROM Productos WHERE IdProducto=@IdProducto";
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@IdProducto", idProducto);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
 
                 MessageBox.Show("Producto eliminado correctamente.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvProductos.DataSource = null;
+                txtBuscar.Text = "";
             }
         }
 
-        private void btnActualizar_Click_1(object sender, EventArgs e)
+        private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var productosEditados = dgvProductos.DataSource as List<Producto>;
-
-            if (productosEditados == null)
+            if (e.RowIndex >= 0)
             {
-                MessageBox.Show("No hay productos para actualizar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                int idProducto = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells["ID"].Value);
+                new EditarProductoDetalle(idProducto).ShowDialog();
+                txtBuscar.Text = "";
+                dgvProductos.DataSource = null;
             }
-
-            // Actualizar la lista completa
-            foreach (var productoEditado in productosEditados)
-            {
-                var original = DatosProductos.ListaProductos
-                    .FirstOrDefault(p => p.ID == productoEditado.ID);
-
-                if (original != null)
-                {
-                    original.Nombre = productoEditado.Nombre;
-                    original.Talla = productoEditado.Talla;
-                    original.Color = productoEditado.Color;
-                    original.Precio = productoEditado.Precio;
-                    original.Stock = productoEditado.Stock;
-                }
-            }
-
-            PersistenciaProductos.GuardarProductos(DatosProductos.ListaProductos);
-            MessageBox.Show("Cambios guardados correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

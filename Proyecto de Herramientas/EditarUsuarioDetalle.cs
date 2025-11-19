@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace Proyecto_de_Herramientas
 {
     public partial class EditarUsuarioDetalle : Form

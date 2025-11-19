@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarProducto));
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnregresar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -57,17 +56,6 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(248, 22);
             this.txtBuscar.TabIndex = 12;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnActualizar.BackgroundImage")));
-            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnActualizar.Location = new System.Drawing.Point(371, 343);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(66, 50);
-            this.btnActualizar.TabIndex = 11;
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
             // 
             // btnEliminar
             // 
@@ -105,6 +93,7 @@
             // 
             // dgvProductos
             // 
+            this.dgvProductos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(76, 171);
             this.dgvProductos.Name = "dgvProductos";
@@ -113,6 +102,7 @@
             this.dgvProductos.Size = new System.Drawing.Size(650, 108);
             this.dgvProductos.TabIndex = 14;
             this.dgvProductos.Visible = false;
+            this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
             // 
             // EditarProducto
             // 
@@ -122,7 +112,6 @@
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.btnConsultar);
@@ -139,7 +128,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnregresar;
         private System.Windows.Forms.Button btnConsultar;

@@ -39,10 +39,9 @@
             // 
             this.btnVolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolver.BackgroundImage")));
             this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolver.Location = new System.Drawing.Point(781, 446);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnVolver.Location = new System.Drawing.Point(694, 357);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(87, 77);
+            this.btnVolver.Size = new System.Drawing.Size(77, 62);
             this.btnVolver.TabIndex = 5;
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -50,9 +49,9 @@
             // linkActualizar
             // 
             this.linkActualizar.AutoSize = true;
-            this.linkActualizar.Location = new System.Drawing.Point(54, 465);
+            this.linkActualizar.Location = new System.Drawing.Point(48, 372);
             this.linkActualizar.Name = "linkActualizar";
-            this.linkActualizar.Size = new System.Drawing.Size(288, 20);
+            this.linkActualizar.Size = new System.Drawing.Size(242, 16);
             this.linkActualizar.TabIndex = 4;
             this.linkActualizar.TabStop = true;
             this.linkActualizar.Text = "Actualiza o elimina algún producto aquí.";
@@ -60,24 +59,25 @@
             // 
             // dgvProductos
             // 
+            this.dgvProductos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(34, 39);
-            this.dgvProductos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvProductos.Location = new System.Drawing.Point(30, 31);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(834, 359);
+            this.dgvProductos.Size = new System.Drawing.Size(741, 287);
             this.dgvProductos.TabIndex = 3;
+          
+            this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
             // 
             // ConsultarProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.linkActualizar);
             this.Controls.Add(this.dgvProductos);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ConsultarProductos";
             this.Text = "ConsultarProductos";
             this.Load += new System.EventHandler(this.ConsultarProductos_Load);

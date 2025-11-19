@@ -22,9 +22,24 @@ namespace Proyecto_de_Herramientas
             formCarrito = new Pantalla_para_realizar_compras(this);
         }
 
+     
+
+        private void btnCarritoparacomprar_Click(object sender, EventArgs e)
+        {
+            formCarrito.Show();
+            formCarrito.BringToFront();
+            this.Hide();
+        }
+
+
+        private void picSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void button7_Click(object sender, EventArgs e)
         {
-            string refProducto = "0301";
+            int refProducto = 301;
 
             var producto = DatosProductos.ListaProductos.FirstOrDefault(p => p.ID == refProducto);
 
@@ -40,8 +55,7 @@ namespace Proyecto_de_Herramientas
 
         private void btnAgregardeJeanArmadora_Click(object sender, EventArgs e)
         {
-         
-            string refProducto = "4748"; 
+            int refProducto = 4748;
 
             var producto = DatosProductos.ListaProductos.FirstOrDefault(p => p.ID == refProducto);
 
@@ -54,12 +68,10 @@ namespace Proyecto_de_Herramientas
             FormTallas frm = new FormTallas(producto);
             frm.ShowDialog();
         }
-        
 
         private void btnAgregardeJeanStraight_Click(object sender, EventArgs e)
         {
-        
-            string refProducto = "4897"; 
+            int refProducto = 4897;
 
             var producto = DatosProductos.ListaProductos.FirstOrDefault(p => p.ID == refProducto);
 
@@ -71,19 +83,11 @@ namespace Proyecto_de_Herramientas
 
             FormTallas frm = new FormTallas(producto);
             frm.ShowDialog();
-        }
-        
-
-        private void btnCarritoparacomprar_Click(object sender, EventArgs e)
-        {
-            formCarrito.Show();
-            formCarrito.BringToFront();
-            this.Hide();
         }
 
         private void btnJeanBluelvy_Click(object sender, EventArgs e)
         {
-            string refProducto = "0300";
+            int refProducto = 300;
 
             var producto = DatosProductos.ListaProductos.FirstOrDefault(p => p.ID == refProducto);
 
@@ -99,7 +103,7 @@ namespace Proyecto_de_Herramientas
 
         private void btnJeanRooibos_Click(object sender, EventArgs e)
         {
-            string refProducto = "4904";
+            int refProducto = 4904;
 
             var producto = DatosProductos.ListaProductos.FirstOrDefault(p => p.ID == refProducto);
 
@@ -115,7 +119,7 @@ namespace Proyecto_de_Herramientas
 
         private void btnJeanSea_Click(object sender, EventArgs e)
         {
-            string refProducto = "4880";
+            int refProducto = 4880;
 
             var producto = DatosProductos.ListaProductos.FirstOrDefault(p => p.ID == refProducto);
 
@@ -131,7 +135,7 @@ namespace Proyecto_de_Herramientas
 
         private void BtnJeanBlueTea_Click(object sender, EventArgs e)
         {
-            string refProducto = "0282";
+            int refProducto = 282;
 
             var producto = DatosProductos.ListaProductos.FirstOrDefault(p => p.ID == refProducto);
 
@@ -147,7 +151,7 @@ namespace Proyecto_de_Herramientas
 
         private void btnJeanFlare_Click(object sender, EventArgs e)
         {
-            string refProducto = "4903";
+            int refProducto = 4903;
 
             var producto = DatosProductos.ListaProductos.FirstOrDefault(p => p.ID == refProducto);
 
@@ -161,9 +165,5 @@ namespace Proyecto_de_Herramientas
             frm.ShowDialog();
         }
 
-        private void picSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

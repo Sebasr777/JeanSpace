@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_de_Herramientas
 {
-    partial class Form1
+    partial class login
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
@@ -40,18 +40,18 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(425, 309);
+            this.txtUsuario.Location = new System.Drawing.Point(673, 493);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(178, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(281, 26);
             this.txtUsuario.TabIndex = 1;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(425, 380);
+            this.txtContraseña.Location = new System.Drawing.Point(672, 602);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(178, 26);
+            this.txtContraseña.Size = new System.Drawing.Size(225, 26);
             this.txtContraseña.TabIndex = 2;
             this.txtContraseña.UseSystemPasswordChar = true;
             // 
@@ -60,10 +60,10 @@
             this.btnIngresar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIngresar.BackgroundImage")));
             this.btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIngresar.ForeColor = System.Drawing.Color.Coral;
-            this.btnIngresar.Location = new System.Drawing.Point(645, 459);
+            this.btnIngresar.Location = new System.Drawing.Point(1017, 721);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(214, 55);
+            this.btnIngresar.Size = new System.Drawing.Size(329, 87);
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click_1);
@@ -72,7 +72,7 @@
             // 
             this.picVer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVer.BackgroundImage")));
             this.picVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picVer.Location = new System.Drawing.Point(555, 380);
+            this.picVer.Location = new System.Drawing.Point(905, 604);
             this.picVer.Name = "picVer";
             this.picVer.Size = new System.Drawing.Size(48, 23);
             this.picVer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -84,7 +84,7 @@
             // 
             this.picOcultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picOcultar.BackgroundImage")));
             this.picOcultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picOcultar.Location = new System.Drawing.Point(553, 376);
+            this.picOcultar.Location = new System.Drawing.Point(903, 600);
             this.picOcultar.Name = "picOcultar";
             this.picOcultar.Size = new System.Drawing.Size(53, 28);
             this.picOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -92,13 +92,13 @@
             this.picOcultar.TabStop = false;
             this.picOcultar.Click += new System.EventHandler(this.picOcultar_Click);
             // 
-            // Form1
+            // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(1420, 882);
             this.Controls.Add(this.picOcultar);
             this.Controls.Add(this.picVer);
             this.Controls.Add(this.btnIngresar);
@@ -106,8 +106,8 @@
             this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "login";
+            this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picVer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOcultar)).EndInit();

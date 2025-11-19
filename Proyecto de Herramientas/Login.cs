@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_de_Herramientas
 {
-    public partial class Form1 : Form
+    public partial class login : Form
     {
-        public Form1()
+        public login()
         {
             InitializeComponent();
         }
@@ -63,8 +63,8 @@ namespace Proyecto_de_Herramientas
                                     switch (rol)
                                     {
                                         case "Administrador":
-                                            FormAdministrador frmAdmin = new FormAdministrador(nombreUsuario);
-                                            frmAdmin.Show();
+                                            Home AdminHome = new Home();
+                                            AdminHome.Show();
                                             break;
 
                                         case "Auxiliar de Ventas":

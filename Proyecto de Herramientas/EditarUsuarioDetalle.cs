@@ -156,7 +156,7 @@ namespace Proyecto_de_Herramientas
                     // Mostrar nueva imagen en el PictureBox sin bloquear el archivo
                     ImagenHelper.CargarImagenSinBloqueo(picFoto, rutaDestino);
 
-                    MessageBox.Show("✅ Imagen actualizada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Imagen actualizada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 

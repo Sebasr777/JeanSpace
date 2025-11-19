@@ -54,6 +54,7 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(184, 250);
             this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(144, 22);
             this.txtTelefono.TabIndex = 78;
             // 
@@ -82,6 +83,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(184, 202);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(144, 22);
             this.txtEmail.TabIndex = 74;
             // 
@@ -111,6 +113,7 @@
             // 
             this.txtContraseña.Location = new System.Drawing.Point(502, 144);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.ReadOnly = true;
             this.txtContraseña.Size = new System.Drawing.Size(144, 22);
             this.txtContraseña.TabIndex = 70;
             // 
@@ -118,6 +121,7 @@
             // 
             this.txtUsuarioLogin.Location = new System.Drawing.Point(502, 83);
             this.txtUsuarioLogin.Name = "txtUsuarioLogin";
+            this.txtUsuarioLogin.ReadOnly = true;
             this.txtUsuarioLogin.Size = new System.Drawing.Size(144, 22);
             this.txtUsuarioLogin.TabIndex = 69;
             // 
@@ -125,6 +129,7 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(184, 144);
             this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(144, 22);
             this.txtDireccion.TabIndex = 68;
             // 
@@ -132,6 +137,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(184, 83);
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(144, 22);
             this.txtNombre.TabIndex = 67;
             // 
@@ -213,6 +219,7 @@
             // 
             this.txtRol.Location = new System.Drawing.Point(184, 309);
             this.txtRol.Name = "txtRol";
+            this.txtRol.ReadOnly = true;
             this.txtRol.Size = new System.Drawing.Size(144, 22);
             this.txtRol.TabIndex = 79;
             // 

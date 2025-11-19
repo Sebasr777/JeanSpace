@@ -124,8 +124,10 @@ namespace Proyecto_de_Herramientas
 
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
         {
-
-            string carpetaImagenes = Path.Combine(Directory.GetParent(Application.StartupPath).Parent.Parent.FullName, "Images");
+            string carpetaImagenes = Path.Combine(
+      Directory.GetParent(Application.StartupPath).Parent.Parent.FullName,
+      "Images"
+  );
 
             OpenFileDialog ofd = new OpenFileDialog
             {
@@ -138,18 +140,40 @@ namespace Proyecto_de_Herramientas
             {
                 string rutaOrigen = ofd.FileName;
                 string nombreUsuario = txtUsuarioLogin.Text.Trim();
+
+                if (string.IsNullOrEmpty(nombreUsuario))
+                {
+                    MessageBox.Show("⚠️ Debes ingresar un nombre de usuario antes de seleccionar la imagen.",
+                                    "Nombre requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 string extension = Path.GetExtension(rutaOrigen);
                 string nombreArchivo = $"{nombreUsuario}{extension}";
 
+                if (string.IsNullOrEmpty(nombreArchivo) || string.IsNullOrEmpty(extension))
+                {
+                    MessageBox.Show("⚠️ El nombre del archivo no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 string carpetaProyecto = RutaProyectoHelper.ObtenerRaizProyecto();
                 string carpetaDestino = Path.Combine(carpetaProyecto, "Images", "Usuarios");
-
-
-
                 string rutaDestino = Path.Combine(carpetaDestino, nombreArchivo);
-                File.Copy(rutaOrigen, rutaDestino, true);
 
-                pictureBox1.Image = Image.FromFile(rutaDestino);
+                // Liberar imagen actual del PictureBox
+                ImagenHelper.LiberarImagen(pictureBox1);
+
+                // Evitar copiar sobre sí mismo
+                if (!string.Equals(rutaOrigen, rutaDestino, StringComparison.OrdinalIgnoreCase))
+                {
+                    File.Copy(rutaOrigen, rutaDestino, true);
+                }
+
+                // Cargar imagen sin bloquear el archivo
+                ImagenHelper.CargarImagenSinBloqueo(pictureBox1, rutaDestino);
+
+                // Guardar ruta relativa para BD
                 imagenRelativa = Path.Combine("Images", "Usuarios", nombreArchivo).Replace("\\", "/");
             }
         }

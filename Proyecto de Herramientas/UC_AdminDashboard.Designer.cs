@@ -660,7 +660,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UC_AdminDashboard";
-            this.Size = new System.Drawing.Size(917, 793);
+            this.Size = new System.Drawing.Size(987, 915);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel16.ResumeLayout(false);

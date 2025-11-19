@@ -20,7 +20,13 @@ namespace Proyecto_de_Herramientas
         private void inicio_Click(object sender, EventArgs e)
         {
             Home AdminHome = (Home)FindForm();
-            AdminHome.CargarUserControlContenido(new UC_AdminDashboard());
+            AdminHome.CargarPanelContenido(new UC_AdminDashboard());
+        }
+
+        private void inventario_Click(object sender, EventArgs e)
+        {
+            Home AdminHome = (Home)FindForm();
+            AdminHome.CargarPanelContenido(new UC_AdminInventario());
         }
     }
 }

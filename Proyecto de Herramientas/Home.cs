@@ -12,23 +12,51 @@ namespace Proyecto_de_Herramientas
 {
     public partial class Home : Form
     {
-        public Home()
+        private string _rolUsuario;
+        private string _nombreUsuario;
+
+        public Home(string rol, string nombreUsuario)
         {
             InitializeComponent();
 
-            CargarUserControlLateral(new UC_AdminMenuLateral());
-
-            CargarUserControlContenido(new UC_AdminDashboard());
+            _rolUsuario = rol;
+            _nombreUsuario = nombreUsuario;
         }
 
-        public void CargarUserControlLateral(UserControl uc)
+        private void Home_Load(object sender, EventArgs e)
+        {
+            CargarInterfazPorRol();
+        }
+
+        private void CargarInterfazPorRol()
+        {
+            switch (_rolUsuario)
+            {
+                case "Administrador":
+                    CargarPanelLateral(new UC_AdminMenuLateral());
+                    CargarPanelContenido(new UC_AdminDashboard());
+                    break;
+
+                case "Auxiliar de Ventas":
+                    CargarPanelLateral(new UC_AVentasMenuLateral());
+                    CargarPanelContenido(new UC_AVentasDashboard());
+                    break;
+
+                case "Auxiliar de Bodega":
+                    CargarPanelLateral(new UC_BodegaMenuLateral());
+                    CargarPanelContenido(new UC_BodegaDashboard());
+                    break;
+            }
+        }
+
+        public void CargarPanelLateral(UserControl uc)
         {
             panelLateral.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             panelLateral.Controls.Add(uc);
         }
 
-        public void CargarUserControlContenido(UserControl uc)
+        public void CargarPanelContenido(UserControl uc)
         {
             panelContenedor.Controls.Clear();
             uc.Dock = DockStyle.Fill;

@@ -158,6 +158,42 @@
     <Compile Include="UC_AdminDashboard.Designer.cs">
       <DependentUpon>UC_AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_AVentasDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AVentasDashboard.Designer.cs">
+      <DependentUpon>UC_AVentasDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_AVentasMenuLateral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AVentasMenuLateral.Designer.cs">
+      <DependentUpon>UC_AVentasMenuLateral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BodegaDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BodegaDashboard.Designer.cs">
+      <DependentUpon>UC_BodegaDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BodegaDespacharPedidos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BodegaDespacharPedidos.Designer.cs">
+      <DependentUpon>UC_BodegaDespacharPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BodegaMenuLateral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BodegaMenuLateral.Designer.cs">
+      <DependentUpon>UC_BodegaMenuLateral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BodegaRecibirPedidos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BodegaRecibirPedidos.Designer.cs">
+      <DependentUpon>UC_BodegaRecibirPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="AgregarProducto.resx">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
@@ -218,6 +254,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_AdminDashboard.resx">
       <DependentUpon>UC_AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_AVentasDashboard.resx">
+      <DependentUpon>UC_AVentasDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_BodegaDashboard.resx">
+      <DependentUpon>UC_BodegaDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_BodegaDespacharPedidos.resx">
+      <DependentUpon>UC_BodegaDespacharPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_BodegaMenuLateral.resx">
+      <DependentUpon>UC_BodegaMenuLateral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_BodegaRecibirPedidos.resx">
+      <DependentUpon>UC_BodegaRecibirPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

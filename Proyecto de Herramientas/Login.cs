@@ -63,23 +63,21 @@ namespace Proyecto_de_Herramientas
                                     switch (rol)
                                     {
                                         case "Administrador":
-                                            Home AdminHome = new Home();
+                                            Home AdminHome = new Home(rol, nombreUsuario);
                                             AdminHome.Show();
                                             break;
 
                                         case "Auxiliar de Ventas":
-                                            Pantalla_para_el_vendedor frmVentas = new Pantalla_para_el_vendedor();
-                                            frmVentas.Show();
+                                            Home AVentasHome = new Home(rol, nombreUsuario);
+                                            AVentasHome.Show();
                                             break;
 
                                         case "Auxiliar de Bodega":
-                                            // Cuando tengas listo el formulario de bodega, descomenta:
-                                            // FormBodega frmBodega = new FormBodega();
-                                            // frmBodega.Show();
-                                            MessageBox.Show("El formulario de Bodega aún no está implementado.");
+                                            Home BodegaHome = new Home(rol, nombreUsuario);
+                                            BodegaHome.Show();
                                             break;
                                     }
-
+                                     
                                     this.Hide(); // ocultar login
                                 }
                                 else
@@ -115,7 +113,7 @@ namespace Proyecto_de_Herramientas
             picOcultar.Visible = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
             txtContraseña.UseSystemPasswordChar = true;
             picOcultar.Visible = false;

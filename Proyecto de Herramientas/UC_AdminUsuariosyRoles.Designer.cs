@@ -39,10 +39,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.dgvusuariosyroles = new System.Windows.Forms.DataGridView();
+            this.btnmodificaryeliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvusuariosyroles)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -152,10 +155,37 @@
             this.button1.Text = "+ Agregar Usuario";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // dgvusuariosyroles
+            // 
+            this.dgvusuariosyroles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvusuariosyroles.Location = new System.Drawing.Point(33, 598);
+            this.dgvusuariosyroles.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvusuariosyroles.Name = "dgvusuariosyroles";
+            this.dgvusuariosyroles.RowHeadersWidth = 51;
+            this.dgvusuariosyroles.RowTemplate.Height = 24;
+            this.dgvusuariosyroles.Size = new System.Drawing.Size(942, 309);
+            this.dgvusuariosyroles.TabIndex = 33;
+            // 
+            // btnmodificaryeliminar
+            // 
+            this.btnmodificaryeliminar.AutoSize = true;
+            this.btnmodificaryeliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
+            this.btnmodificaryeliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmodificaryeliminar.ForeColor = System.Drawing.Color.White;
+            this.btnmodificaryeliminar.Location = new System.Drawing.Point(712, 528);
+            this.btnmodificaryeliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnmodificaryeliminar.Name = "btnmodificaryeliminar";
+            this.btnmodificaryeliminar.Size = new System.Drawing.Size(263, 49);
+            this.btnmodificaryeliminar.TabIndex = 34;
+            this.btnmodificaryeliminar.Text = "Modificar o Eliminar Datos de Usuarios";
+            this.btnmodificaryeliminar.UseVisualStyleBackColor = false;
+            // 
             // UC_AdminUsuariosyRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnmodificaryeliminar);
+            this.Controls.Add(this.dgvusuariosyroles);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -169,6 +199,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvusuariosyroles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +216,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvusuariosyroles;
+        private System.Windows.Forms.Button btnmodificaryeliminar;
     }
 }

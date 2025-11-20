@@ -17,25 +17,25 @@ namespace Proyecto_de_Herramientas
             InitializeComponent();
         }
 
-        private void inicio_Click(object sender, EventArgs e)
+        private void btninicio_Click(object sender, EventArgs e)
         {
             Home AdminHome = (Home)FindForm();
             AdminHome.CargarPanelContenido(new UC_AdminDashboard());
         }
 
-        private void inventario_Click(object sender, EventArgs e)
+        private void btninventario_Click(object sender, EventArgs e)
         {
             Home AdminHome = (Home)FindForm();
             AdminHome.CargarPanelContenido(new UC_AdminInventario());
         }
 
-        private void productos_Click(object sender, EventArgs e)
+        private void btnpedidos_Click(object sender, EventArgs e)
         {
             Home AdminHome = (Home)FindForm();
-            AdminHome.CargarPanelContenido(new UC_AdminProductos());
+            AdminHome.CargarPanelContenido(new UC_AdminPedidos());
         }
 
-        private void usuariosyroles_Click(object sender, EventArgs e)
+        private void btnusuariosyroles_Click(object sender, EventArgs e)
         {
             Home AdminHome = (Home)FindForm();
             AdminHome.CargarPanelContenido(new UC_AdminUsuariosyRoles());
@@ -43,7 +43,7 @@ namespace Proyecto_de_Herramientas
 
         private void btncerrarsesion_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

@@ -37,11 +37,11 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.inicio = new System.Windows.Forms.Button();
+            this.btninicio = new System.Windows.Forms.Button();
             this.btncerrarsesion = new System.Windows.Forms.Button();
-            this.usuariosyroles = new System.Windows.Forms.Button();
-            this.productos = new System.Windows.Forms.Button();
-            this.inventario = new System.Windows.Forms.Button();
+            this.btnusuariosyroles = new System.Windows.Forms.Button();
+            this.btnpedidos = new System.Windows.Forms.Button();
+            this.btninventario = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -62,11 +62,11 @@
             this.panelLateral.Controls.Add(this.pictureBox4);
             this.panelLateral.Controls.Add(this.pictureBox3);
             this.panelLateral.Controls.Add(this.pictureBox2);
-            this.panelLateral.Controls.Add(this.inicio);
+            this.panelLateral.Controls.Add(this.btninicio);
             this.panelLateral.Controls.Add(this.btncerrarsesion);
-            this.panelLateral.Controls.Add(this.usuariosyroles);
-            this.panelLateral.Controls.Add(this.productos);
-            this.panelLateral.Controls.Add(this.inventario);
+            this.panelLateral.Controls.Add(this.btnusuariosyroles);
+            this.panelLateral.Controls.Add(this.btnpedidos);
+            this.panelLateral.Controls.Add(this.btninventario);
             this.panelLateral.Controls.Add(this.pictureBox1);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
@@ -154,23 +154,23 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // inicio
+            // btninicio
             // 
-            this.inicio.AutoSize = true;
-            this.inicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.inicio.FlatAppearance.BorderSize = 0;
-            this.inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inicio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inicio.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.inicio.Location = new System.Drawing.Point(54, 207);
-            this.inicio.Margin = new System.Windows.Forms.Padding(2);
-            this.inicio.Name = "inicio";
-            this.inicio.Size = new System.Drawing.Size(111, 31);
-            this.inicio.TabIndex = 5;
-            this.inicio.Text = "Inicio";
-            this.inicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.inicio.UseVisualStyleBackColor = true;
-            this.inicio.Click += new System.EventHandler(this.inicio_Click);
+            this.btninicio.AutoSize = true;
+            this.btninicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btninicio.FlatAppearance.BorderSize = 0;
+            this.btninicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btninicio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btninicio.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btninicio.Location = new System.Drawing.Point(54, 207);
+            this.btninicio.Margin = new System.Windows.Forms.Padding(2);
+            this.btninicio.Name = "btninicio";
+            this.btninicio.Size = new System.Drawing.Size(111, 31);
+            this.btninicio.TabIndex = 5;
+            this.btninicio.Text = "Inicio";
+            this.btninicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btninicio.UseVisualStyleBackColor = true;
+            this.btninicio.Click += new System.EventHandler(this.btninicio_Click);
             // 
             // btncerrarsesion
             // 
@@ -190,59 +190,59 @@
             this.btncerrarsesion.UseVisualStyleBackColor = true;
             this.btncerrarsesion.Click += new System.EventHandler(this.btncerrarsesion_Click);
             // 
-            // usuariosyroles
+            // btnusuariosyroles
             // 
-            this.usuariosyroles.AutoSize = true;
-            this.usuariosyroles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.usuariosyroles.FlatAppearance.BorderSize = 0;
-            this.usuariosyroles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.usuariosyroles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuariosyroles.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.usuariosyroles.Location = new System.Drawing.Point(54, 363);
-            this.usuariosyroles.Margin = new System.Windows.Forms.Padding(2);
-            this.usuariosyroles.Name = "usuariosyroles";
-            this.usuariosyroles.Size = new System.Drawing.Size(144, 31);
-            this.usuariosyroles.TabIndex = 3;
-            this.usuariosyroles.Text = "Usuarios y Roles";
-            this.usuariosyroles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.usuariosyroles.UseVisualStyleBackColor = true;
-            this.usuariosyroles.Click += new System.EventHandler(this.usuariosyroles_Click);
+            this.btnusuariosyroles.AutoSize = true;
+            this.btnusuariosyroles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnusuariosyroles.FlatAppearance.BorderSize = 0;
+            this.btnusuariosyroles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnusuariosyroles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnusuariosyroles.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnusuariosyroles.Location = new System.Drawing.Point(54, 363);
+            this.btnusuariosyroles.Margin = new System.Windows.Forms.Padding(2);
+            this.btnusuariosyroles.Name = "btnusuariosyroles";
+            this.btnusuariosyroles.Size = new System.Drawing.Size(144, 31);
+            this.btnusuariosyroles.TabIndex = 3;
+            this.btnusuariosyroles.Text = "Usuarios y Roles";
+            this.btnusuariosyroles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnusuariosyroles.UseVisualStyleBackColor = true;
+            this.btnusuariosyroles.Click += new System.EventHandler(this.btnusuariosyroles_Click);
             // 
-            // productos
+            // btnpedidos
             // 
-            this.productos.AutoSize = true;
-            this.productos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.productos.FlatAppearance.BorderSize = 0;
-            this.productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.productos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.productos.Location = new System.Drawing.Point(54, 312);
-            this.productos.Margin = new System.Windows.Forms.Padding(2);
-            this.productos.Name = "productos";
-            this.productos.Size = new System.Drawing.Size(111, 31);
-            this.productos.TabIndex = 2;
-            this.productos.Text = "Productos";
-            this.productos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.productos.UseVisualStyleBackColor = true;
-            this.productos.Click += new System.EventHandler(this.productos_Click);
+            this.btnpedidos.AutoSize = true;
+            this.btnpedidos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnpedidos.FlatAppearance.BorderSize = 0;
+            this.btnpedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpedidos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpedidos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnpedidos.Location = new System.Drawing.Point(54, 312);
+            this.btnpedidos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnpedidos.Name = "btnpedidos";
+            this.btnpedidos.Size = new System.Drawing.Size(111, 31);
+            this.btnpedidos.TabIndex = 2;
+            this.btnpedidos.Text = "Pedidos";
+            this.btnpedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnpedidos.UseVisualStyleBackColor = true;
+            this.btnpedidos.Click += new System.EventHandler(this.btnpedidos_Click);
             // 
-            // inventario
+            // btninventario
             // 
-            this.inventario.AutoSize = true;
-            this.inventario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.inventario.FlatAppearance.BorderSize = 0;
-            this.inventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inventario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.inventario.Location = new System.Drawing.Point(54, 257);
-            this.inventario.Margin = new System.Windows.Forms.Padding(2);
-            this.inventario.Name = "inventario";
-            this.inventario.Size = new System.Drawing.Size(111, 31);
-            this.inventario.TabIndex = 1;
-            this.inventario.Text = "Inventario";
-            this.inventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.inventario.UseVisualStyleBackColor = true;
-            this.inventario.Click += new System.EventHandler(this.inventario_Click);
+            this.btninventario.AutoSize = true;
+            this.btninventario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btninventario.FlatAppearance.BorderSize = 0;
+            this.btninventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btninventario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btninventario.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btninventario.Location = new System.Drawing.Point(54, 257);
+            this.btninventario.Margin = new System.Windows.Forms.Padding(2);
+            this.btninventario.Name = "btninventario";
+            this.btninventario.Size = new System.Drawing.Size(111, 31);
+            this.btninventario.TabIndex = 1;
+            this.btninventario.Text = "Inventario";
+            this.btninventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btninventario.UseVisualStyleBackColor = true;
+            this.btninventario.Click += new System.EventHandler(this.btninventario_Click);
             // 
             // pictureBox1
             // 
@@ -285,11 +285,11 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button inicio;
+        private System.Windows.Forms.Button btninicio;
         private System.Windows.Forms.Button btncerrarsesion;
-        private System.Windows.Forms.Button usuariosyroles;
-        private System.Windows.Forms.Button productos;
-        private System.Windows.Forms.Button inventario;
+        private System.Windows.Forms.Button btnusuariosyroles;
+        private System.Windows.Forms.Button btnpedidos;
+        private System.Windows.Forms.Button btninventario;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -36,11 +36,11 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvrecibirpedidos = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvrecibirpedidos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -119,20 +119,20 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvrecibirpedidos);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(33, 334);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(946, 420);
+            this.panel2.Size = new System.Drawing.Size(946, 403);
             this.panel2.TabIndex = 21;
             // 
-            // dataGridView1
+            // dgvrecibirpedidos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 125);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(946, 292);
-            this.dataGridView1.TabIndex = 22;
+            this.dgvrecibirpedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvrecibirpedidos.Location = new System.Drawing.Point(0, 76);
+            this.dgvrecibirpedidos.Name = "dgvrecibirpedidos";
+            this.dgvrecibirpedidos.Size = new System.Drawing.Size(946, 324);
+            this.dgvrecibirpedidos.TabIndex = 22;
             // 
             // button1
             // 
@@ -140,7 +140,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(785, 13);
+            this.button1.Location = new System.Drawing.Point(784, 16);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 42);
@@ -162,7 +162,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvrecibirpedidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,6 +179,6 @@
         private System.Windows.Forms.Label lblpedidosdia;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvrecibirpedidos;
     }
 }

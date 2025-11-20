@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_de_Herramientas
 {
-    public partial class UC_AdminProductos : UserControl
+    public partial class UC_AdminPedidos : UserControl
     {
-        public UC_AdminProductos()
+        public UC_AdminPedidos()
         {
             InitializeComponent();
         }

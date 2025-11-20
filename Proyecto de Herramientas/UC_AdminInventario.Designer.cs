@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_AdminInventario));
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnagregarproducto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblproductosstock = new System.Windows.Forms.Label();
@@ -40,13 +40,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.btnmodificaryeliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,19 +73,19 @@
             this.lblUsuario.TabIndex = 16;
             this.lblUsuario.Text = "Gestiona todos los productos disponibles en tu inventario";
             // 
-            // button1
+            // btnagregarproducto
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(830, 31);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 44);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "+  Agregar Producto";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnagregarproducto.AutoSize = true;
+            this.btnagregarproducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
+            this.btnagregarproducto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarproducto.ForeColor = System.Drawing.Color.White;
+            this.btnagregarproducto.Location = new System.Drawing.Point(830, 31);
+            this.btnagregarproducto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnagregarproducto.Name = "btnagregarproducto";
+            this.btnagregarproducto.Size = new System.Drawing.Size(146, 44);
+            this.btnagregarproducto.TabIndex = 25;
+            this.btnagregarproducto.Text = "+  Agregar Producto";
+            this.btnagregarproducto.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -171,22 +171,30 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Stock Total";
             // 
-            // panel3
+            // dgvProductos
             // 
-            this.panel3.Controls.Add(this.txtbuscar);
-            this.panel3.Location = new System.Drawing.Point(33, 373);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(942, 79);
-            this.panel3.TabIndex = 28;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(34, 443);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersWidth = 51;
+            this.dgvProductos.RowTemplate.Height = 24;
+            this.dgvProductos.Size = new System.Drawing.Size(942, 309);
+            this.dgvProductos.TabIndex = 29;
             // 
-            // txtbuscar
+            // btnmodificaryeliminar
             // 
-            this.txtbuscar.Location = new System.Drawing.Point(14, 30);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(895, 20);
-            this.txtbuscar.TabIndex = 0;
-            this.txtbuscar.Enter += new System.EventHandler(this.txtbuscar_Enter);
-            this.txtbuscar.Leave += new System.EventHandler(this.txtbuscar_Leave);
+            this.btnmodificaryeliminar.AutoSize = true;
+            this.btnmodificaryeliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
+            this.btnmodificaryeliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmodificaryeliminar.ForeColor = System.Drawing.Color.White;
+            this.btnmodificaryeliminar.Location = new System.Drawing.Point(763, 365);
+            this.btnmodificaryeliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnmodificaryeliminar.Name = "btnmodificaryeliminar";
+            this.btnmodificaryeliminar.Size = new System.Drawing.Size(213, 46);
+            this.btnmodificaryeliminar.TabIndex = 30;
+            this.btnmodificaryeliminar.Text = "Modificar o Eliminar Productos";
+            this.btnmodificaryeliminar.UseVisualStyleBackColor = false;
             // 
             // UC_AdminInventario
             // 
@@ -194,10 +202,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 40);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.btnmodificaryeliminar);
+            this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnagregarproducto);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -210,8 +219,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,7 +229,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnagregarproducto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblproductosstock;
@@ -230,7 +238,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtbuscar;
+        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.Button btnmodificaryeliminar;
     }
 }

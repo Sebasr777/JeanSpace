@@ -158,11 +158,11 @@
     <Compile Include="UC_AdminDashboard.Designer.cs">
       <DependentUpon>UC_AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_AdminProductos.cs">
+    <Compile Include="UC_AdminPedidos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_AdminProductos.Designer.cs">
-      <DependentUpon>UC_AdminProductos.cs</DependentUpon>
+    <Compile Include="UC_AdminPedidos.Designer.cs">
+      <DependentUpon>UC_AdminPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_AdminUsuariosyRoles.cs">
       <SubType>UserControl</SubType>
@@ -279,8 +279,8 @@
     <EmbeddedResource Include="UC_AdminDashboard.resx">
       <DependentUpon>UC_AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_AdminProductos.resx">
-      <DependentUpon>UC_AdminProductos.cs</DependentUpon>
+    <EmbeddedResource Include="UC_AdminPedidos.resx">
+      <DependentUpon>UC_AdminPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_AdminUsuariosyRoles.resx">
       <DependentUpon>UC_AdminUsuariosyRoles.cs</DependentUpon>

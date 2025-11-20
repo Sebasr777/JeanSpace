@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_de_Herramientas
 {
-    partial class UC_AdminProductos
+    partial class UC_AdminPedidos
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnagregarpedido = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblpedidosdia = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,31 +36,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnagregarpedido
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(832, 31);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 42);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "+ Nuevo Producto";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 334);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(946, 292);
-            this.dataGridView1.TabIndex = 27;
+            this.btnagregarpedido.AutoSize = true;
+            this.btnagregarpedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
+            this.btnagregarpedido.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarpedido.ForeColor = System.Drawing.Color.White;
+            this.btnagregarpedido.Location = new System.Drawing.Point(832, 31);
+            this.btnagregarpedido.Margin = new System.Windows.Forms.Padding(2);
+            this.btnagregarpedido.Name = "btnagregarpedido";
+            this.btnagregarpedido.Size = new System.Drawing.Size(147, 42);
+            this.btnagregarpedido.TabIndex = 31;
+            this.btnagregarpedido.Text = "+ Nuevo Pedido";
+            this.btnagregarpedido.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -133,24 +125,35 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
             this.label1.Location = new System.Drawing.Point(26, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(292, 37);
+            this.label1.Size = new System.Drawing.Size(263, 37);
             this.label1.TabIndex = 28;
-            this.label1.Text = "Gestión de Productos";
+            this.label1.Text = "Gestión de Pedidos";
             // 
-            // UC_AdminProductos
+            // dgvPedidos
+            // 
+            this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidos.Location = new System.Drawing.Point(33, 311);
+            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvPedidos.Name = "dgvPedidos";
+            this.dgvPedidos.RowHeadersWidth = 51;
+            this.dgvPedidos.RowTemplate.Height = 24;
+            this.dgvPedidos.Size = new System.Drawing.Size(946, 309);
+            this.dgvPedidos.TabIndex = 32;
+            // 
+            // UC_AdminPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPedidos);
+            this.Controls.Add(this.btnagregarpedido);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label1);
-            this.Name = "UC_AdminProductos";
+            this.Name = "UC_AdminPedidos";
             this.Size = new System.Drawing.Size(1004, 932);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,8 +161,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnagregarpedido;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblpedidosdia;
         private System.Windows.Forms.Label label3;
@@ -167,5 +169,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvPedidos;
     }
 }

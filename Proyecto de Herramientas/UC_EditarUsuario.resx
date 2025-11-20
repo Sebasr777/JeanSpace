@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnGuardar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGuardarCambios.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACXFSURBVHhe7d3P
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACXFSURBVHhe7d3P
         snRlmWBxgj81IHokOBK9Cwm8EBtC76OlvQBxrjQYXoKhDhQn1VGDvgNpvAD/jAQci5PuZ1NVFpar8LDf
         k9+33p1rRfwijAeEZ795zs7kwMl85mTPjW+M746fjt+MP42/jP+XJAk4niOO54r/O47njjfHa+PZUfK+
         Or4//jDowU2S5Iv6/XhrfGWUrC+PH41PBj14SZKsOp5j/td4aZSgb42PBz1YSZI8to/G66OeUi+MHw96
@@ -521,7 +521,7 @@
         /oEBwBTqnlT3prpH1b2q7ll176p72NZS97S6t9HctLT0fwBOBmsEL5uTFwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnCambiarImagen.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSeleccionarImagen.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         0gAADtIBXDxaSgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADibSURBVHhe7d15

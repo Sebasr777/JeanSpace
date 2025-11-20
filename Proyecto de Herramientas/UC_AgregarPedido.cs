@@ -23,11 +23,9 @@ namespace Proyecto_de_Herramientas
 
         private void UC_AgregarPedido_Load(object sender, EventArgs e)
         {
-            // Cargar productos y tallas disponibles
             CargarProductos();
             CargarTallas();
 
-            // Configurar ListView para mostrar el detalle del pedido
             lvDetallePedido.View = View.Details;
             lvDetallePedido.FullRowSelect = true;
             lvDetallePedido.GridLines = true;
@@ -39,15 +37,12 @@ namespace Proyecto_de_Herramientas
             lvDetallePedido.Columns.Add("Precio Unitario", 100);
             lvDetallePedido.Columns.Add("Subtotal", 100);
 
-            // Configurar NumericUpDown para cantidad
             numericCantidad.Minimum = 1;
             numericCantidad.Maximum = 100;
             numericCantidad.Value = 1;
 
-            // Inicializar total en cero
             lblCantidadTotal.Text = 0m.ToString("C0");
 
-            // Limpiar campos iniciales
             txtNombreCliente.Clear();
             cmbProducto.SelectedIndex = -1;
             cmbTalla.SelectedIndex = 0;
@@ -63,7 +58,6 @@ namespace Proyecto_de_Herramientas
                 {
                     cmbProducto.Items.Clear();
                     preciosProductos.Clear();
-
                     HashSet<string> nombresUnicos = new HashSet<string>();
 
                     while (reader.Read())
@@ -71,7 +65,7 @@ namespace Proyecto_de_Herramientas
                         string nombre = reader.GetString(0);
                         decimal precio = reader.GetDecimal(1);
 
-                        if (nombresUnicos.Add(nombre)) // solo agrega si no existe
+                        if (nombresUnicos.Add(nombre))
                         {
                             cmbProducto.Items.Add(nombre);
                             preciosProductos[nombre] = precio;
@@ -120,10 +114,35 @@ namespace Proyecto_de_Herramientas
             string producto = cmbProducto.SelectedItem.ToString();
             string talla = cmbTalla.SelectedItem?.ToString() ?? "";
             int cantidad = (int)numericCantidad.Value;
-            decimal precio = preciosProductos[producto];
+
+            int idProducto = 0;
+            decimal precio = 0;
+
+            using (SqlConnection conn = BDJeanStore.Conectar())
+            {
+                string query = "SELECT IdProducto, Precio FROM Productos WHERE Nombre = @Nombre AND Estado = 1";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Nombre", producto);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            idProducto = Convert.ToInt32(reader["IdProducto"]);
+                            precio = Convert.ToDecimal(reader["Precio"]);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró el producto en la base de datos.");
+                            return;
+                        }
+                    }
+                }
+            }
 
             var detalle = new DetallePedido
             {
+                IdProducto = idProducto,
                 Producto = producto,
                 Talla = talla,
                 Cantidad = cantidad,
@@ -156,55 +175,58 @@ namespace Proyecto_de_Herramientas
                 {
                     decimal total = detalles.Sum(d => d.Subtotal);
 
-                    // ✅ Insertar venta con NombreCliente, sin IdCliente
-                    string queryVenta = @"INSERT INTO Ventas (NombreCliente, IdUsuario, Fecha, Total, EstadoId)
-                                  OUTPUT INSERTED.IdVenta
-                                  VALUES (@NombreCliente, @IdUsuario, GETDATE(), @Total, 1)";
+                    // Insertar cliente
+                    int idCliente;
+                    string queryCliente = @"INSERT INTO Clientes (Nombre, Estado)
+                                            OUTPUT INSERTED.IdCliente
+                                            VALUES (@Nombre, 1)";
+                    using (SqlCommand cmdCliente = new SqlCommand(queryCliente, conn, trans))
+                    {
+                        cmdCliente.Parameters.AddWithValue("@Nombre", txtNombreCliente.Text.Trim());
+                        idCliente = Convert.ToInt32(cmdCliente.ExecuteScalar());
+                    }
 
+                    // Insertar venta
+                    int idVenta;
+                    string queryVenta = @"INSERT INTO Ventas (IdCliente, IdUsuario, Fecha, Total, EstadoId)
+                                          OUTPUT INSERTED.IdVenta
+                                          VALUES (@IdCliente, @IdUsuario, GETDATE(), @Total, 1)";
                     using (SqlCommand cmdVenta = new SqlCommand(queryVenta, conn, trans))
                     {
-                        cmdVenta.Parameters.AddWithValue("@NombreCliente", txtNombreCliente.Text.Trim());
+                        cmdVenta.Parameters.AddWithValue("@IdCliente", idCliente);
                         cmdVenta.Parameters.AddWithValue("@IdUsuario", SesionUsuario.IdUsuario);
                         cmdVenta.Parameters.AddWithValue("@Total", total);
-
-                        int idVenta = Convert.ToInt32(cmdVenta.ExecuteScalar());
-
-                        // Insertar detalles
-                        foreach (var d in detalles)
-                        {
-                            string queryDetalle = @"INSERT INTO DetalleVenta (IdVenta, Producto, Talla, Cantidad, PrecioUnitario, Subtotal)
-                                            VALUES (@IdVenta, @Producto, @Talla, @Cantidad, @PrecioUnitario, @Subtotal)";
-
-                            using (SqlCommand cmdDet = new SqlCommand(queryDetalle, conn, trans))
-                            {
-                                cmdDet.Parameters.AddWithValue("@IdVenta", idVenta);
-                                cmdDet.Parameters.AddWithValue("@Producto", d.Producto);
-                                cmdDet.Parameters.AddWithValue("@Talla", d.Talla);
-                                cmdDet.Parameters.AddWithValue("@Cantidad", d.Cantidad);
-                                cmdDet.Parameters.AddWithValue("@PrecioUnitario", d.PrecioUnitario);
-                                cmdDet.Parameters.AddWithValue("@Subtotal", d.Subtotal);
-
-                                cmdDet.ExecuteNonQuery();
-                            }
-                        }
-
-                        trans.Commit();
-                        MessageBox.Show("Pedido confirmado correctamente.");
-
-                        // Limpiar interfaz
-                        detalles.Clear();
-                        ActualizarListViewYTotal();
-                        txtNombreCliente.Clear();
-                        cmbProducto.SelectedIndex = -1;
-                        numericCantidad.Value = 1;
+                        idVenta = Convert.ToInt32(cmdVenta.ExecuteScalar());
                     }
+
+                    // Insertar detalles
+                    foreach (var d in detalles)
+                    {
+                        string queryDetalle = @"INSERT INTO DetalleVenta (IdVenta, IdProducto, Cantidad, PrecioUnitario)
+                                                VALUES (@IdVenta, @IdProducto, @Cantidad, @PrecioUnitario)";
+                        using (SqlCommand cmdDet = new SqlCommand(queryDetalle, conn, trans))
+                        {
+                            cmdDet.Parameters.AddWithValue("@IdVenta", idVenta);
+                            cmdDet.Parameters.AddWithValue("@IdProducto", d.IdProducto);
+                            cmdDet.Parameters.AddWithValue("@Cantidad", d.Cantidad);
+                            cmdDet.Parameters.AddWithValue("@PrecioUnitario", d.PrecioUnitario);
+                            cmdDet.ExecuteNonQuery();
+                        }
+                    }
+
+                    trans.Commit();
+                    MessageBox.Show("Pedido confirmado correctamente.");
+                    detalles.Clear();
+                    ActualizarListViewYTotal();
+                    txtNombreCliente.Clear();
                 }
                 catch (Exception ex)
                 {
                     trans.Rollback();
-                    MessageBox.Show("Error al confirmar el pedido: " + ex.Message);
+                    MessageBox.Show("Error al confirmar el pedido:\n" + ex.Message);
                 }
             }
+
         }
 
         private void ActualizarListViewYTotal()
@@ -221,6 +243,11 @@ namespace Proyecto_de_Herramientas
             }
 
             lblCantidadTotal.Text = detalles.Sum(d => d.Subtotal).ToString("C0");
+        }
+
+        private void lvDetallePedido_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

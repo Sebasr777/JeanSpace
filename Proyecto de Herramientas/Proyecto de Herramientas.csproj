@@ -175,6 +175,12 @@
     <Compile Include="UC_AgregarProducto.Designer.cs">
       <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_AgregarUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AgregarUsuario.Designer.cs">
+      <DependentUpon>UC_AgregarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_AVentasDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,6 +234,12 @@
     </Compile>
     <Compile Include="UC_EditarProducto.Designer.cs">
       <DependentUpon>UC_EditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_EditarUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_EditarUsuario.Designer.cs">
+      <DependentUpon>UC_EditarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="Venta.cs" />
@@ -297,6 +309,9 @@
     <EmbeddedResource Include="UC_AgregarProducto.resx">
       <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_AgregarUsuario.resx">
+      <DependentUpon>UC_AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_AVentasDashboard.resx">
       <DependentUpon>UC_AVentasDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_EditarProducto.resx">
       <DependentUpon>UC_EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_EditarUsuario.resx">
+      <DependentUpon>UC_EditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

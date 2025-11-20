@@ -58,6 +58,7 @@ namespace Proyecto_de_Herramientas
                                 if (clave == passBD) // aquí luego puedes encriptar
                                 {
                                     MessageBox.Show($"Bienvenido {reader["Nombre"]} - Rol: {rol}", "Bienvenido/a", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    SesionUsuario.IdUsuario = Convert.ToInt32(reader["IdUsuario"]);
 
                                     // Abrir formulario según rol
                                     switch (rol)
@@ -69,6 +70,8 @@ namespace Proyecto_de_Herramientas
 
                                         case "Auxiliar de Ventas":
                                             Home AVentasHome = new Home(rol, nombreUsuario);
+                                           
+
                                             AVentasHome.Show();
                                             break;
 

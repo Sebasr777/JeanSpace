@@ -49,18 +49,38 @@ namespace Proyecto_de_Herramientas
 
         private void CargarDatos()
         {
-            if (productoActual == null)
             {
-                MessageBox.Show("No se recibió ningún producto para editar.");
-                return;
-            }
+                if (productoActual == null)
+                {
+                    MessageBox.Show("No se recibió ningún producto para editar.");
+                    return;
+                }
 
-            txtNombre.Text = productoActual.Nombre;
-            txtTalla.Text = productoActual.Talla;
-            txtColor.Text = productoActual.Color;
-            txtPrecio.Text = productoActual.Precio.ToString();
-            txtStock.Text = productoActual.Stock.ToString();
-            picImagen.ImageLocation = productoActual.ImagenPath;
+                // 🟦 Cargar datos en los TextBox
+                txtNombre.Text = productoActual.Nombre;
+                txtTalla.Text = productoActual.Talla;
+                txtColor.Text = productoActual.Color;
+                txtPrecio.Text = productoActual.Precio.ToString();
+                txtStock.Text = productoActual.Stock.ToString();
+
+                // 🟪 Cargar imagen si existe
+                if (!string.IsNullOrEmpty(productoActual.ImagenPath))
+                {
+                    string rutaCompleta = Path.Combine(RutaProyectoHelper.ObtenerRaizProyecto(), productoActual.ImagenPath);
+                    
+
+                    if (File.Exists(rutaCompleta))
+                    {
+                        ImagenHelper.LiberarImagen(picImagen); // liberar imagen anterior
+                        ImagenHelper.CargarImagenSinBloqueo(picImagen, rutaCompleta); // cargar nueva imagen
+                    }
+                    else
+                    {
+                        MessageBox.Show("❌ El archivo NO existe");
+                    }
+                }
+
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -112,6 +132,11 @@ namespace Proyecto_de_Herramientas
             {
                 MessageBox.Show("La imagen no existe.");
             }
+        }
+
+        private void UC_EditarProducto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

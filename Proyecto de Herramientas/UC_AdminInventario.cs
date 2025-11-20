@@ -43,12 +43,25 @@ namespace Proyecto_de_Herramientas
 
             if (e.RowIndex >= 0)
             {
-                var producto = (Producto)dgvInventario.Rows[e.RowIndex].DataBoundItem;
+                var row = dgvInventario.Rows[e.RowIndex].DataBoundItem as DataRowView;
+                if (row != null)
+                {
+                    var producto = new Producto
+                    {
+                        ID = Convert.ToInt32(row["IdProducto"]),
+                        Nombre = row["Nombre"].ToString(),
+                        Talla = row["Talla"].ToString(),
+                        Color = row["Color"].ToString(),
+                        Precio = Convert.ToDecimal(row["Precio"]),
+                        Stock = Convert.ToInt32(row["Stock"]),
+                        ImagenPath = row["ImagenPath"].ToString()
+                    };
 
-                var editor = new UC_EditarProducto(producto);
-                editor.Dock = DockStyle.Fill;
-                this.Controls.Add(editor);
-                editor.BringToFront();
+                    var editor = new UC_EditarProducto(producto);
+                    editor.Dock = DockStyle.Fill;
+                    this.Controls.Add(editor);
+                    editor.BringToFront();
+                }
             }
         }
 

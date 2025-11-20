@@ -22,8 +22,10 @@ namespace Proyecto_de_Herramientas
 
                 while (carpetaActual != null)
                 {
-                    string posibleRuta = Path.Combine(carpetaActual, "Images", "Usuarios");
-                    if (Directory.Exists(posibleRuta))
+                    string rutaUsuarios = Path.Combine(carpetaActual, "Images", "Usuarios");
+                    string rutaProductos = Path.Combine(carpetaActual, "Images", "Productos");
+
+                    if (Directory.Exists(rutaUsuarios) || Directory.Exists(rutaProductos))
                     {
                         return carpetaActual;
                     }
@@ -31,7 +33,6 @@ namespace Proyecto_de_Herramientas
                     carpetaActual = Directory.GetParent(carpetaActual)?.FullName;
                 }
 
-                // Si no se encuentra, usar la carpeta de inicio como fallback
                 return Application.StartupPath;
             }
         }

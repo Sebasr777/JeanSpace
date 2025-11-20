@@ -18,12 +18,9 @@ namespace Proyecto_de_Herramientas
         public UC_AVentasEnviarBodega()
         {
             InitializeComponent();
-            // Conexión de eventos
             this.Load += UC_AVentasEnviarBodega_Load;
             cmbEstado.SelectedIndexChanged += cmbEstado_SelectedIndexChanged;
             btnEnviarABodega.Click += btnEnviarABodega_Click;
-
-            // Opcional: evita que el usuario escriba texto no existente
             cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
@@ -32,46 +29,37 @@ namespace Proyecto_de_Herramientas
             using (SqlConnection conn = BDJeanStore.Conectar())
             {
                 string query = "SELECT IdEstado, NombreEstado FROM EstadosPedido";
-                using (SqlDataAdapter da = new SqlDataAdapter(query, conn))
-                {
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-                    // Primero: asignar DisplayMember/ValueMember
-                    cmbEstado.DisplayMember = "NombreEstado";
-                    cmbEstado.ValueMember = "IdEstado";
-                    // Luego: asignar DataSource
-                    cmbEstado.DataSource = dt;
-                }
+                cmbEstado.DisplayMember = "NombreEstado";
+                cmbEstado.ValueMember = "IdEstado";
+                cmbEstado.DataSource = dt;
             }
         }
 
         private void CargarPedidosPorEstado()
         {
-            int? estadoId = GetSelectedEstadoId();
-            if (estadoId == null)
-            {
-                dgvPedidos.DataSource = null;
-                lblTotalPedidos.Text = "0";
-                return;
-            }
+            if (cmbEstado.SelectedValue == null) return;
+
+            int estadoId = Convert.ToInt32(cmbEstado.SelectedValue);
 
             using (SqlConnection conn = BDJeanStore.Conectar())
             {
-                string query = @"SELECT IdVenta, NombreCliente, Fecha, Total
-                                 FROM Ventas
-                                 WHERE EstadoId = @EstadoId";
+                string query = @"SELECT V.IdVenta, C.Nombre AS NombreCliente, V.Fecha, V.Total
+                 FROM Ventas V
+                 INNER JOIN Clientes C ON V.IdCliente = C.IdCliente
+                 WHERE V.EstadoId = @EstadoId";
 
-                using (SqlDataAdapter da = new SqlDataAdapter(query, conn))
-                {
-                    da.SelectCommand.Parameters.AddWithValue("@EstadoId", estadoId.Value);
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                da.SelectCommand.Parameters.AddWithValue("@EstadoId", estadoId);
 
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-                    dgvPedidos.DataSource = dt;
-                    lblTotalPedidos.Text = dt.Rows.Count.ToString();
-                }
+                dgvPedidos.DataSource = dt;
+                lblTotalPedidos.Text = dt.Rows.Count.ToString();
             }
         }
 
@@ -83,27 +71,33 @@ namespace Proyecto_de_Herramientas
                 return;
             }
 
+            if (cmbEstado.SelectedValue == null)
+            {
+                MessageBox.Show("Selecciona un estado válido.");
+                return;
+            }
+
+            int estadoActual = Convert.ToInt32(cmbEstado.SelectedValue);
+
             using (SqlConnection conn = BDJeanStore.Conectar())
             {
-                conn.Open();
                 SqlTransaction trans = conn.BeginTransaction();
 
                 try
                 {
                     string query = @"UPDATE Ventas 
-                             SET EstadoId = @NuevoEstado 
-                             WHERE EstadoId = @EstadoActual";
+                         SET EstadoId = @NuevoEstado 
+                         WHERE EstadoId = @EstadoActual";
 
-                    using (SqlCommand cmd = new SqlCommand(query, conn, trans))
-                    {
-                        cmd.Parameters.AddWithValue("@NuevoEstado", 2); // En Bodega
-                        cmd.Parameters.AddWithValue("@EstadoActual", Convert.ToInt32(cmbEstado.SelectedValue));
-                        int afectados = cmd.ExecuteNonQuery();
+                    SqlCommand cmd = new SqlCommand(query, conn, trans);
+                    cmd.Parameters.AddWithValue("@NuevoEstado", 2); // En Bodega
+                    cmd.Parameters.AddWithValue("@EstadoActual", estadoActual);
 
-                        trans.Commit();
-                        MessageBox.Show($"Se enviaron {afectados} pedidos a bodega.");
-                        CargarPedidosPorEstado(); // refrescar
-                    }
+                    int afectados = cmd.ExecuteNonQuery();
+                    trans.Commit();
+
+                    MessageBox.Show($"Se enviaron {afectados} pedidos a bodega.");
+                    CargarPedidosPorEstado();
                 }
                 catch (Exception ex)
                 {
@@ -111,12 +105,12 @@ namespace Proyecto_de_Herramientas
                     MessageBox.Show("Error al enviar pedidos: " + ex.Message);
                 }
             }
+
         }
 
         private void UC_AVentasEnviarBodega_Load(object sender, EventArgs e)
         {
             CargarEstados();
-            // Seleccionar primer estado si existe para evitar SelectedValue = null
             if (cmbEstado.Items.Count > 0 && cmbEstado.SelectedIndex < 0)
                 cmbEstado.SelectedIndex = 0;
 
@@ -125,7 +119,6 @@ namespace Proyecto_de_Herramientas
 
         private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Evita ejecutar mientras el ComboBox aún está bindando
             if (!IsHandleCreated) return;
             CargarPedidosPorEstado();
         }

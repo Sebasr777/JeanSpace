@@ -46,44 +46,49 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
-            this.label1.Location = new System.Drawing.Point(26, 31);
+            this.label1.Location = new System.Drawing.Point(35, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 37);
+            this.label1.Size = new System.Drawing.Size(284, 46);
             this.label1.TabIndex = 23;
             this.label1.Text = "Registrar Pedido";
             // 
             // txtNombreCliente
             // 
             this.txtNombreCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCliente.Location = new System.Drawing.Point(189, 144);
+            this.txtNombreCliente.Location = new System.Drawing.Point(252, 177);
+            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(187, 22);
+            this.txtNombreCliente.Size = new System.Drawing.Size(248, 26);
             this.txtNombreCliente.TabIndex = 24;
             // 
             // cmbProducto
             // 
             this.cmbProducto.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Location = new System.Drawing.Point(189, 213);
+            this.cmbProducto.Location = new System.Drawing.Point(252, 262);
+            this.cmbProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbProducto.Name = "cmbProducto";
-            this.cmbProducto.Size = new System.Drawing.Size(212, 21);
+            this.cmbProducto.Size = new System.Drawing.Size(281, 27);
             this.cmbProducto.TabIndex = 25;
             // 
             // cmbTalla
             // 
             this.cmbTalla.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTalla.FormattingEnabled = true;
-            this.cmbTalla.Location = new System.Drawing.Point(189, 279);
+            this.cmbTalla.Location = new System.Drawing.Point(252, 343);
+            this.cmbTalla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbTalla.Name = "cmbTalla";
-            this.cmbTalla.Size = new System.Drawing.Size(212, 21);
+            this.cmbTalla.Size = new System.Drawing.Size(281, 27);
             this.cmbTalla.TabIndex = 26;
             // 
             // btnAgregarAlPedido
             // 
             this.btnAgregarAlPedido.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarAlPedido.Location = new System.Drawing.Point(226, 725);
+            this.btnAgregarAlPedido.Location = new System.Drawing.Point(301, 892);
+            this.btnAgregarAlPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregarAlPedido.Name = "btnAgregarAlPedido";
-            this.btnAgregarAlPedido.Size = new System.Drawing.Size(179, 60);
+            this.btnAgregarAlPedido.Size = new System.Drawing.Size(239, 74);
             this.btnAgregarAlPedido.TabIndex = 27;
             this.btnAgregarAlPedido.Text = "Agregar al Pedido";
             this.btnAgregarAlPedido.UseVisualStyleBackColor = true;
@@ -93,26 +98,30 @@
             // 
             this.lvDetallePedido.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDetallePedido.HideSelection = false;
-            this.lvDetallePedido.Location = new System.Drawing.Point(189, 348);
+            this.lvDetallePedido.Location = new System.Drawing.Point(252, 428);
+            this.lvDetallePedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvDetallePedido.Name = "lvDetallePedido";
-            this.lvDetallePedido.Size = new System.Drawing.Size(570, 276);
+            this.lvDetallePedido.Size = new System.Drawing.Size(759, 339);
             this.lvDetallePedido.TabIndex = 28;
             this.lvDetallePedido.UseCompatibleStateImageBehavior = false;
+            this.lvDetallePedido.SelectedIndexChanged += new System.EventHandler(this.lvDetallePedido_SelectedIndexChanged);
             // 
             // numericCantidad
             // 
             this.numericCantidad.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericCantidad.Location = new System.Drawing.Point(474, 212);
+            this.numericCantidad.Location = new System.Drawing.Point(632, 261);
+            this.numericCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericCantidad.Name = "numericCantidad";
-            this.numericCantidad.Size = new System.Drawing.Size(285, 22);
+            this.numericCantidad.Size = new System.Drawing.Size(380, 26);
             this.numericCantidad.TabIndex = 29;
             // 
             // btnConfirmarPedido
             // 
             this.btnConfirmarPedido.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarPedido.Location = new System.Drawing.Point(550, 727);
+            this.btnConfirmarPedido.Location = new System.Drawing.Point(733, 895);
+            this.btnConfirmarPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirmarPedido.Name = "btnConfirmarPedido";
-            this.btnConfirmarPedido.Size = new System.Drawing.Size(179, 58);
+            this.btnConfirmarPedido.Size = new System.Drawing.Size(239, 71);
             this.btnConfirmarPedido.TabIndex = 32;
             this.btnConfirmarPedido.Text = "Confirmar Pedido";
             this.btnConfirmarPedido.UseVisualStyleBackColor = true;
@@ -122,9 +131,10 @@
             // 
             this.lblCantidadTotal.AutoSize = true;
             this.lblCantidadTotal.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadTotal.Location = new System.Drawing.Point(493, 657);
+            this.lblCantidadTotal.Location = new System.Drawing.Point(657, 809);
+            this.lblCantidadTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidadTotal.Name = "lblCantidadTotal";
-            this.lblCantidadTotal.Size = new System.Drawing.Size(70, 37);
+            this.lblCantidadTotal.Size = new System.Drawing.Size(87, 46);
             this.lblCantidadTotal.TabIndex = 34;
             this.lblCantidadTotal.Text = "num";
             // 
@@ -133,15 +143,16 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
-            this.lblTotal.Location = new System.Drawing.Point(401, 657);
+            this.lblTotal.Location = new System.Drawing.Point(535, 809);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(74, 37);
+            this.lblTotal.Size = new System.Drawing.Size(92, 46);
             this.lblTotal.TabIndex = 33;
             this.lblTotal.Text = "Total";
             // 
             // UC_AgregarPedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblCantidadTotal);
             this.Controls.Add(this.lblTotal);
@@ -153,8 +164,9 @@
             this.Controls.Add(this.cmbProducto);
             this.Controls.Add(this.txtNombreCliente);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UC_AgregarPedido";
-            this.Size = new System.Drawing.Size(1004, 932);
+            this.Size = new System.Drawing.Size(1339, 1147);
             this.Load += new System.EventHandler(this.UC_AgregarPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).EndInit();
             this.ResumeLayout(false);

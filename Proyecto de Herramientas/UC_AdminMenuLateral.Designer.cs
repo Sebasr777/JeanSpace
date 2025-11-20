@@ -38,7 +38,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btninicio = new System.Windows.Forms.Button();
-            this.btncerrarsesion = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnusuariosyroles = new System.Windows.Forms.Button();
             this.btnpedidos = new System.Windows.Forms.Button();
             this.btninventario = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             this.panelLateral.Controls.Add(this.pictureBox3);
             this.panelLateral.Controls.Add(this.pictureBox2);
             this.panelLateral.Controls.Add(this.btninicio);
-            this.panelLateral.Controls.Add(this.btncerrarsesion);
+            this.panelLateral.Controls.Add(this.btnCerrarSesion);
             this.panelLateral.Controls.Add(this.btnusuariosyroles);
             this.panelLateral.Controls.Add(this.btnpedidos);
             this.panelLateral.Controls.Add(this.btninventario);
@@ -172,23 +172,23 @@
             this.btninicio.UseVisualStyleBackColor = true;
             this.btninicio.Click += new System.EventHandler(this.btninicio_Click);
             // 
-            // btncerrarsesion
+            // btnCerrarSesion
             // 
-            this.btncerrarsesion.AutoSize = true;
-            this.btncerrarsesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrarsesion.FlatAppearance.BorderSize = 0;
-            this.btncerrarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncerrarsesion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncerrarsesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncerrarsesion.Location = new System.Drawing.Point(54, 826);
-            this.btncerrarsesion.Margin = new System.Windows.Forms.Padding(2);
-            this.btncerrarsesion.Name = "btncerrarsesion";
-            this.btncerrarsesion.Size = new System.Drawing.Size(120, 31);
-            this.btncerrarsesion.TabIndex = 4;
-            this.btncerrarsesion.Text = "Cerrar Sesión";
-            this.btncerrarsesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncerrarsesion.UseVisualStyleBackColor = true;
-            this.btncerrarsesion.Click += new System.EventHandler(this.btncerrarsesion_Click);
+            this.btnCerrarSesion.AutoSize = true;
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(54, 826);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 31);
+            this.btnCerrarSesion.TabIndex = 4;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // btnusuariosyroles
             // 
@@ -286,7 +286,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btninicio;
-        private System.Windows.Forms.Button btncerrarsesion;
+        private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnusuariosyroles;
         private System.Windows.Forms.Button btnpedidos;
         private System.Windows.Forms.Button btninventario;

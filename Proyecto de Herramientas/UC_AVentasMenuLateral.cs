@@ -34,5 +34,15 @@ namespace Proyecto_de_Herramientas
             Home AVentasHome = (Home)FindForm();
             AVentasHome.CargarPanelContenido(new UC_AVentasEnviarBodega());
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Home homeForm = (Home)this.FindForm();
+
+            if (homeForm != null)
+            {
+                homeForm.CerrarSesion();
+            }
+        }
     }
 }

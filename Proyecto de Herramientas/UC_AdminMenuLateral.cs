@@ -41,9 +41,14 @@ namespace Proyecto_de_Herramientas
             AdminHome.CargarPanelContenido(new UC_AdminUsuariosyRoles());
         }
 
-        private void btncerrarsesion_Click(object sender, EventArgs e)
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            Home homeForm = (Home)this.FindForm();
 
+            if (homeForm != null)
+            {
+                homeForm.CerrarSesion();
+            }
         }
     }
 }

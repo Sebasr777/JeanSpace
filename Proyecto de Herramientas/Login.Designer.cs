@@ -34,8 +34,10 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.picVer = new System.Windows.Forms.PictureBox();
             this.picOcultar = new System.Windows.Forms.PictureBox();
+            this.picSalir = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picVer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOcultar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -73,7 +75,7 @@
             this.picVer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVer.BackgroundImage")));
             this.picVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picVer.Location = new System.Drawing.Point(603, 393);
-            this.picVer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picVer.Margin = new System.Windows.Forms.Padding(2);
             this.picVer.Name = "picVer";
             this.picVer.Size = new System.Drawing.Size(32, 15);
             this.picVer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -86,13 +88,24 @@
             this.picOcultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picOcultar.BackgroundImage")));
             this.picOcultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picOcultar.Location = new System.Drawing.Point(602, 390);
-            this.picOcultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picOcultar.Margin = new System.Windows.Forms.Padding(2);
             this.picOcultar.Name = "picOcultar";
             this.picOcultar.Size = new System.Drawing.Size(35, 18);
             this.picOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picOcultar.TabIndex = 6;
             this.picOcultar.TabStop = false;
             this.picOcultar.Click += new System.EventHandler(this.picOcultar_Click);
+            // 
+            // picSalir
+            // 
+            this.picSalir.Image = ((System.Drawing.Image)(resources.GetObject("picSalir.Image")));
+            this.picSalir.Location = new System.Drawing.Point(448, 469);
+            this.picSalir.Name = "picSalir";
+            this.picSalir.Size = new System.Drawing.Size(61, 57);
+            this.picSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSalir.TabIndex = 7;
+            this.picSalir.TabStop = false;
+            this.picSalir.Click += new System.EventHandler(this.picSalir_Click);
             // 
             // login
             // 
@@ -101,6 +114,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(947, 573);
+            this.Controls.Add(this.picSalir);
             this.Controls.Add(this.picOcultar);
             this.Controls.Add(this.picVer);
             this.Controls.Add(this.btnIngresar);
@@ -113,6 +127,7 @@
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picVer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOcultar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +139,7 @@
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.PictureBox picVer;
         private System.Windows.Forms.PictureBox picOcultar;
+        private System.Windows.Forms.PictureBox picSalir;
     }
 }
 

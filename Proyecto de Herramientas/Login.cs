@@ -121,5 +121,10 @@ namespace Proyecto_de_Herramientas
             txtContraseña.UseSystemPasswordChar = true;
             picOcultar.Visible = false;
         }
+
+        private void picSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -34,5 +34,15 @@ namespace Proyecto_de_Herramientas
             Home AdminHome = (Home)FindForm();
             AdminHome.CargarPanelContenido(new UC_BodegaDespacharPedidos());
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Home homeForm = (Home)this.FindForm();
+
+            if (homeForm != null)
+            {
+                homeForm.CerrarSesion();
+            }
+        }
     }
 }

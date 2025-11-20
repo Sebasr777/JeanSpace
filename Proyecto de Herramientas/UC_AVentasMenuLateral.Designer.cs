@@ -37,7 +37,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btninicio = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnenviarabodega = new System.Windows.Forms.Button();
             this.btnregistrarpedido = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -59,7 +59,7 @@
             this.panelLateral.Controls.Add(this.pictureBox3);
             this.panelLateral.Controls.Add(this.pictureBox2);
             this.panelLateral.Controls.Add(this.btninicio);
-            this.panelLateral.Controls.Add(this.button4);
+            this.panelLateral.Controls.Add(this.btnCerrarSesion);
             this.panelLateral.Controls.Add(this.btnenviarabodega);
             this.panelLateral.Controls.Add(this.btnregistrarpedido);
             this.panelLateral.Controls.Add(this.pictureBox1);
@@ -156,22 +156,23 @@
             this.btninicio.UseVisualStyleBackColor = true;
             this.btninicio.Click += new System.EventHandler(this.btninicio_Click);
             // 
-            // button4
+            // btnCerrarSesion
             // 
-            this.button4.AutoSize = true;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(54, 826);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 31);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Cerrar Sesión";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.AutoSize = true;
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(54, 826);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(120, 31);
+            this.btnCerrarSesion.TabIndex = 4;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // btnenviarabodega
             // 
@@ -248,7 +249,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btninicio;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnenviarabodega;
         private System.Windows.Forms.Button btnregistrarpedido;
         private System.Windows.Forms.PictureBox pictureBox1;

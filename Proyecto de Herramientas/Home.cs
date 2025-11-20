@@ -62,5 +62,21 @@ namespace Proyecto_de_Herramientas
             uc.Dock = DockStyle.Fill;
             panelContenedor.Controls.Add(uc);
         }
+
+        public void CerrarSesion()
+        {
+            DialogResult r = MessageBox.Show("¿Desea cerrar sesión?",
+                                             "Confirmación",
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+
+            if (r == DialogResult.Yes)
+            {
+                login frmLogin = new login();
+                frmLogin.Show();
+
+                this.Close();
+            }
+        }
     }
 }

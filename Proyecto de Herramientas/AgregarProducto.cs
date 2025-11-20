@@ -35,8 +35,10 @@ namespace Proyecto_de_Herramientas
                 return;
             }
 
+            int idBuscado = int.Parse(txtID.Text.Trim());
+
             // Verificar si el ID ya existe
-            if (DatosProductos.ListaProductos.Any(p => p.ID == txtID.Text.Trim()))
+            if (DatosProductos.ListaProductos.Any(p => p.ID == idBuscado))
             {
                 MessageBox.Show("Ya existe un producto con ese ID.", "ID duplicado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -45,7 +47,7 @@ namespace Proyecto_de_Herramientas
             // Crear nuevo producto
             Producto nuevo = new Producto
             {
-                ID = txtID.Text.Trim(),
+                ID = int.Parse(txtID.Text.Trim()),
                 Nombre = txtNombre.Text.Trim(),
                 Talla = txtTalla.Text.Trim(),
                 Color = txtColor.Text.Trim(),

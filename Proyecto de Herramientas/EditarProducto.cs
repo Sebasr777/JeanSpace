@@ -26,7 +26,7 @@ namespace Proyecto_de_Herramientas
             string filtro = txtBuscar.Text.Trim();
 
             var filtrados = DatosProductos.ListaProductos
-                .Where(p => p.ID.Contains(filtro))
+                .Where(p => p.ID.ToString().Contains(filtro))
                 .ToList();
 
             dgvProductos.DataSource = null;
@@ -52,7 +52,7 @@ namespace Proyecto_de_Herramientas
             }
 
             var productoFiltrado = DatosProductos.ListaProductos
-                .Where(p => p.ID == idBuscado)
+                .Where(p => p.ToString() == idBuscado)
                 .ToList();
 
             if (productoFiltrado.Count == 0)

@@ -56,6 +56,7 @@
       <DependentUpon>AgregarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="BDJeanStore.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="ConsultarFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +75,7 @@
     <Compile Include="ConsultaUsuarios.Designer.cs">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetallePedido.cs" />
     <Compile Include="DetalleUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,23 +125,14 @@
       <DependentUpon>FormTallas.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemCarrito.cs" />
-    <Compile Include="Pantalla para el vendedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pantalla para el vendedor.Designer.cs">
-      <DependentUpon>Pantalla para el vendedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pantalla para realizar compras.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pantalla para realizar compras.Designer.cs">
-      <DependentUpon>Pantalla para realizar compras.cs</DependentUpon>
-    </Compile>
+    <Compile Include="PedidoResumen.cs" />
     <Compile Include="Producto.cs" />
+    <Compile Include="ProductoDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="RutaProyectoHelper.cs" />
+    <Compile Include="SesionUsuario.cs" />
     <Compile Include="UC_AdminInventario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +162,18 @@
     </Compile>
     <Compile Include="UC_AdminUsuariosyRoles.Designer.cs">
       <DependentUpon>UC_AdminUsuariosyRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_AgregarPedido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AgregarPedido.Designer.cs">
+      <DependentUpon>UC_AgregarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_AgregarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AgregarProducto.Designer.cs">
+      <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_AVentasDashboard.cs">
       <SubType>UserControl</SubType>
@@ -218,7 +223,14 @@
     <Compile Include="UC_BodegaRecibirPedidos.Designer.cs">
       <DependentUpon>UC_BodegaRecibirPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_EditarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_EditarProducto.Designer.cs">
+      <DependentUpon>UC_EditarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
+    <Compile Include="Venta.cs" />
     <EmbeddedResource Include="AgregarProducto.resx">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,12 +267,6 @@
     <EmbeddedResource Include="FormTallas.resx">
       <DependentUpon>FormTallas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantalla para el vendedor.resx">
-      <DependentUpon>Pantalla para el vendedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pantalla para realizar compras.resx">
-      <DependentUpon>Pantalla para realizar compras.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -285,6 +291,12 @@
     <EmbeddedResource Include="UC_AdminUsuariosyRoles.resx">
       <DependentUpon>UC_AdminUsuariosyRoles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_AgregarPedido.resx">
+      <DependentUpon>UC_AgregarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_AgregarProducto.resx">
+      <DependentUpon>UC_AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_AVentasDashboard.resx">
       <DependentUpon>UC_AVentasDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_BodegaRecibirPedidos.resx">
       <DependentUpon>UC_BodegaRecibirPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_EditarProducto.resx">
+      <DependentUpon>UC_EditarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

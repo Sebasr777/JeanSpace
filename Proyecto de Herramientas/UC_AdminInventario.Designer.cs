@@ -31,22 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_AdminInventario));
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.btnagregarproducto = new System.Windows.Forms.Button();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lblproductosstock = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnmodificaryeliminar = new System.Windows.Forms.Button();
+            this.dgvInventario = new System.Windows.Forms.DataGridView();
+            this.lblTotalProductos = new System.Windows.Forms.Label();
+            this.lblStockTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,24 +72,25 @@
             this.lblUsuario.TabIndex = 16;
             this.lblUsuario.Text = "Gestiona todos los productos disponibles en tu inventario";
             // 
-            // btnagregarproducto
+            // btnAgregarProducto
             // 
-            this.btnagregarproducto.AutoSize = true;
-            this.btnagregarproducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
-            this.btnagregarproducto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregarproducto.ForeColor = System.Drawing.Color.White;
-            this.btnagregarproducto.Location = new System.Drawing.Point(830, 31);
-            this.btnagregarproducto.Margin = new System.Windows.Forms.Padding(2);
-            this.btnagregarproducto.Name = "btnagregarproducto";
-            this.btnagregarproducto.Size = new System.Drawing.Size(146, 44);
-            this.btnagregarproducto.TabIndex = 25;
-            this.btnagregarproducto.Text = "+  Agregar Producto";
-            this.btnagregarproducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.AutoSize = true;
+            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
+            this.btnAgregarProducto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(830, 31);
+            this.btnAgregarProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(146, 44);
+            this.btnAgregarProducto.TabIndex = 25;
+            this.btnAgregarProducto.Text = "+  Agregar Producto";
+            this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblTotalProductos);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.lblproductosstock);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(33, 168);
             this.panel1.Name = "panel1";
@@ -107,17 +107,6 @@
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
-            // lblproductosstock
-            // 
-            this.lblproductosstock.AutoSize = true;
-            this.lblproductosstock.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblproductosstock.ForeColor = System.Drawing.Color.Gray;
-            this.lblproductosstock.Location = new System.Drawing.Point(9, 116);
-            this.lblproductosstock.Name = "lblproductosstock";
-            this.lblproductosstock.Size = new System.Drawing.Size(53, 25);
-            this.lblproductosstock.TabIndex = 1;
-            this.lblproductosstock.Text = "num";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -131,8 +120,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblStockTotal);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(524, 168);
             this.panel2.Name = "panel2";
@@ -149,17 +138,6 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(9, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "num";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -171,30 +149,40 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Stock Total";
             // 
-            // dgvProductos
+            // dgvInventario
             // 
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(34, 443);
-            this.dgvProductos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.RowHeadersWidth = 51;
-            this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(942, 309);
-            this.dgvProductos.TabIndex = 29;
+            this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventario.Location = new System.Drawing.Point(34, 375);
+            this.dgvInventario.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.RowHeadersWidth = 51;
+            this.dgvInventario.RowTemplate.Height = 24;
+            this.dgvInventario.Size = new System.Drawing.Size(942, 309);
+            this.dgvInventario.TabIndex = 29;
+            this.dgvInventario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellDoubleClick);
             // 
-            // btnmodificaryeliminar
+            // lblTotalProductos
             // 
-            this.btnmodificaryeliminar.AutoSize = true;
-            this.btnmodificaryeliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
-            this.btnmodificaryeliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificaryeliminar.ForeColor = System.Drawing.Color.White;
-            this.btnmodificaryeliminar.Location = new System.Drawing.Point(763, 365);
-            this.btnmodificaryeliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnmodificaryeliminar.Name = "btnmodificaryeliminar";
-            this.btnmodificaryeliminar.Size = new System.Drawing.Size(213, 46);
-            this.btnmodificaryeliminar.TabIndex = 30;
-            this.btnmodificaryeliminar.Text = "Modificar o Eliminar Productos";
-            this.btnmodificaryeliminar.UseVisualStyleBackColor = false;
+            this.lblTotalProductos.AutoSize = true;
+            this.lblTotalProductos.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
+            this.lblTotalProductos.Location = new System.Drawing.Point(7, 113);
+            this.lblTotalProductos.Name = "lblTotalProductos";
+            this.lblTotalProductos.Size = new System.Drawing.Size(66, 32);
+            this.lblTotalProductos.TabIndex = 9;
+            this.lblTotalProductos.Text = "num";
+            // 
+            // lblStockTotal
+            // 
+            this.lblStockTotal.AutoSize = true;
+            this.lblStockTotal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStockTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
+            this.lblStockTotal.Location = new System.Drawing.Point(7, 113);
+            this.lblStockTotal.Name = "lblStockTotal";
+            this.lblStockTotal.Size = new System.Drawing.Size(66, 32);
+            this.lblStockTotal.TabIndex = 9;
+            this.lblStockTotal.Text = "num";
             // 
             // UC_AdminInventario
             // 
@@ -202,11 +190,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 40);
-            this.Controls.Add(this.btnmodificaryeliminar);
-            this.Controls.Add(this.dgvProductos);
+            this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnagregarproducto);
+            this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -219,7 +206,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,16 +216,15 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Button btnagregarproducto;
+        private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label lblproductosstock;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.Button btnmodificaryeliminar;
+        private System.Windows.Forms.DataGridView dgvInventario;
+        private System.Windows.Forms.Label lblTotalProductos;
+        private System.Windows.Forms.Label lblStockTotal;
     }
 }

@@ -60,7 +60,7 @@
             this.btnIngresar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIngresar.BackgroundImage")));
             this.btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIngresar.ForeColor = System.Drawing.Color.Coral;
-            this.btnIngresar.Location = new System.Drawing.Point(678, 469);
+            this.btnIngresar.Location = new System.Drawing.Point(678, 470);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(219, 57);
@@ -73,7 +73,7 @@
             this.picVer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVer.BackgroundImage")));
             this.picVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picVer.Location = new System.Drawing.Point(603, 393);
-            this.picVer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picVer.Margin = new System.Windows.Forms.Padding(2);
             this.picVer.Name = "picVer";
             this.picVer.Size = new System.Drawing.Size(32, 15);
             this.picVer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -86,7 +86,7 @@
             this.picOcultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picOcultar.BackgroundImage")));
             this.picOcultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picOcultar.Location = new System.Drawing.Point(602, 390);
-            this.picOcultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picOcultar.Margin = new System.Windows.Forms.Padding(2);
             this.picOcultar.Name = "picOcultar";
             this.picOcultar.Size = new System.Drawing.Size(35, 18);
             this.picOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

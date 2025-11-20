@@ -111,6 +111,7 @@
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(299, 24);
             this.cmbEstado.TabIndex = 22;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -170,7 +171,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_BodegaRecibirPedidos";
             this.Size = new System.Drawing.Size(1339, 1147);
-            this.Load += new System.EventHandler(this.UC_BodegaRecibirPedidos_Load);
+            this.Load += new System.EventHandler(this.UC_BodegaRecibirPedidos_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

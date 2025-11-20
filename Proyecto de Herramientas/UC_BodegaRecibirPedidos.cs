@@ -13,13 +13,18 @@ namespace Proyecto_de_Herramientas
 {
     public partial class UC_BodegaRecibirPedidos : UserControl
     {
+        
         public UC_BodegaRecibirPedidos()
         {
             InitializeComponent();
+           
         }
+
+     
 
         private void CargarEstados()
         {
+
             using (SqlConnection conn = BDJeanStore.Conectar())
             {
                 string query = "SELECT IdEstado, NombreEstado FROM EstadosPedido";
@@ -31,6 +36,7 @@ namespace Proyecto_de_Herramientas
                 cmbEstado.ValueMember = "IdEstado";
                 cmbEstado.DataSource = dt;
             }
+
         }
         private void CargarPedidosPorEstado()
         {
@@ -39,9 +45,10 @@ namespace Proyecto_de_Herramientas
 
             using (SqlConnection conn = BDJeanStore.Conectar())
             {
-                string query = @"SELECT IdVenta, NombreCliente, Fecha, Total
-                         FROM Ventas
-                         WHERE EstadoId = @EstadoId";
+                string query = @"SELECT V.IdVenta, C.Nombre AS NombreCliente, V.Fecha, V.Total
+                         FROM Ventas V
+                         INNER JOIN Clientes C ON V.IdCliente = C.IdCliente
+                         WHERE V.EstadoId = @EstadoId";
 
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 da.SelectCommand.Parameters.AddWithValue("@EstadoId", estadoId);
@@ -50,7 +57,7 @@ namespace Proyecto_de_Herramientas
                 da.Fill(dt);
 
                 dgvPedidos.DataSource = dt;
-                lblTotalPedidos.Text = dt.Rows.Count.ToString();
+                lblTotalPedidos.Text = $"Total: {dt.Rows.Count}";
             }
         }
 
@@ -97,15 +104,28 @@ namespace Proyecto_de_Herramientas
                     MessageBox.Show("Error al recibir pedidos: " + ex.Message);
                 }
             }
-
         }
+    
+
+
+    
+
 
         private void UC_BodegaRecibirPedidos_Load(object sender, EventArgs e)
         {
-            CargarEstados();
-            if (cmbEstado.Items.Count > 0 && cmbEstado.SelectedIndex < 0)
-                cmbEstado.SelectedIndex = 0;
+            
+        }
 
+        private void UC_BodegaRecibirPedidos_Load_1(object sender, EventArgs e)
+        {
+            CargarEstados();
+            cmbEstado.SelectedValue = 2; // Estado "Enviado a Bodega"
+            CargarPedidosPorEstado();
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!IsHandleCreated) return;
             CargarPedidosPorEstado();
         }
     }

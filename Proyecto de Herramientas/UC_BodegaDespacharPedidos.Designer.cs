@@ -48,7 +48,7 @@
             this.panel2.Controls.Add(this.dgvPedidos);
             this.panel2.Controls.Add(this.btnDespacharTodos);
             this.panel2.Location = new System.Drawing.Point(44, 411);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1261, 517);
             this.panel2.TabIndex = 25;
@@ -58,7 +58,7 @@
             // 
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedidos.Location = new System.Drawing.Point(0, 154);
-            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.RowHeadersWidth = 51;
             this.dgvPedidos.Size = new System.Drawing.Size(1261, 359);
@@ -86,7 +86,7 @@
             this.panel1.Controls.Add(this.cmbEstado);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(44, 187);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1261, 134);
             this.panel1.TabIndex = 24;
@@ -119,10 +119,11 @@
             // 
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(25, 76);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(299, 24);
             this.cmbEstado.TabIndex = 22;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -168,7 +169,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_BodegaDespacharPedidos";
             this.Size = new System.Drawing.Size(1339, 1147);
             this.Load += new System.EventHandler(this.UC_BodegaDespacharPedidos_Load);

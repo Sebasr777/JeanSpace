@@ -74,7 +74,7 @@
             this.panel1.Controls.Add(this.cmbEstado);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(44, 187);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1261, 134);
             this.panel1.TabIndex = 20;
@@ -107,7 +107,7 @@
             // 
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(25, 76);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(299, 24);
             this.cmbEstado.TabIndex = 22;
@@ -129,7 +129,7 @@
             this.panel2.Controls.Add(this.dgvPedidos);
             this.panel2.Controls.Add(this.btnRecibirTodos);
             this.panel2.Location = new System.Drawing.Point(44, 411);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1261, 496);
             this.panel2.TabIndex = 21;
@@ -138,7 +138,7 @@
             // 
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedidos.Location = new System.Drawing.Point(0, 94);
-            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.RowHeadersWidth = 51;
             this.dgvPedidos.Size = new System.Drawing.Size(1261, 399);
@@ -150,7 +150,7 @@
             this.btnRecibirTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(32)))), ((int)(((byte)(240)))));
             this.btnRecibirTodos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecibirTodos.ForeColor = System.Drawing.Color.White;
-            this.btnRecibirTodos.Location = new System.Drawing.Point(1045, 20);
+            this.btnRecibirTodos.Location = new System.Drawing.Point(1043, 20);
             this.btnRecibirTodos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRecibirTodos.Name = "btnRecibirTodos";
             this.btnRecibirTodos.Size = new System.Drawing.Size(196, 52);
@@ -167,7 +167,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_BodegaRecibirPedidos";
             this.Size = new System.Drawing.Size(1339, 1147);
             this.Load += new System.EventHandler(this.UC_BodegaRecibirPedidos_Load);

@@ -38,7 +38,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.inicio = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btncerrarsesion = new System.Windows.Forms.Button();
             this.usuariosyroles = new System.Windows.Forms.Button();
             this.productos = new System.Windows.Forms.Button();
             this.inventario = new System.Windows.Forms.Button();
@@ -63,14 +63,14 @@
             this.panelLateral.Controls.Add(this.pictureBox3);
             this.panelLateral.Controls.Add(this.pictureBox2);
             this.panelLateral.Controls.Add(this.inicio);
-            this.panelLateral.Controls.Add(this.button4);
+            this.panelLateral.Controls.Add(this.btncerrarsesion);
             this.panelLateral.Controls.Add(this.usuariosyroles);
             this.panelLateral.Controls.Add(this.productos);
             this.panelLateral.Controls.Add(this.inventario);
             this.panelLateral.Controls.Add(this.pictureBox1);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
-            this.panelLateral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLateral.Margin = new System.Windows.Forms.Padding(2);
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(216, 885);
             this.panelLateral.TabIndex = 1;
@@ -91,7 +91,7 @@
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(29, 831);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(21, 20);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,7 +114,7 @@
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(30, 369);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(21, 20);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,7 +125,7 @@
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(30, 317);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(21, 20);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -136,7 +136,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(29, 262);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(21, 20);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -147,7 +147,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(30, 212);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(21, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -163,7 +163,7 @@
             this.inicio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inicio.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.inicio.Location = new System.Drawing.Point(54, 207);
-            this.inicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inicio.Margin = new System.Windows.Forms.Padding(2);
             this.inicio.Name = "inicio";
             this.inicio.Size = new System.Drawing.Size(111, 31);
             this.inicio.TabIndex = 5;
@@ -172,22 +172,23 @@
             this.inicio.UseVisualStyleBackColor = true;
             this.inicio.Click += new System.EventHandler(this.inicio_Click);
             // 
-            // button4
+            // btncerrarsesion
             // 
-            this.button4.AutoSize = true;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(54, 826);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 31);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Cerrar Sesión";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btncerrarsesion.AutoSize = true;
+            this.btncerrarsesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrarsesion.FlatAppearance.BorderSize = 0;
+            this.btncerrarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncerrarsesion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncerrarsesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncerrarsesion.Location = new System.Drawing.Point(54, 826);
+            this.btncerrarsesion.Margin = new System.Windows.Forms.Padding(2);
+            this.btncerrarsesion.Name = "btncerrarsesion";
+            this.btncerrarsesion.Size = new System.Drawing.Size(120, 31);
+            this.btncerrarsesion.TabIndex = 4;
+            this.btncerrarsesion.Text = "Cerrar Sesión";
+            this.btncerrarsesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncerrarsesion.UseVisualStyleBackColor = true;
+            this.btncerrarsesion.Click += new System.EventHandler(this.btncerrarsesion_Click);
             // 
             // usuariosyroles
             // 
@@ -198,13 +199,14 @@
             this.usuariosyroles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuariosyroles.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.usuariosyroles.Location = new System.Drawing.Point(54, 363);
-            this.usuariosyroles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usuariosyroles.Margin = new System.Windows.Forms.Padding(2);
             this.usuariosyroles.Name = "usuariosyroles";
             this.usuariosyroles.Size = new System.Drawing.Size(144, 31);
             this.usuariosyroles.TabIndex = 3;
             this.usuariosyroles.Text = "Usuarios y Roles";
             this.usuariosyroles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.usuariosyroles.UseVisualStyleBackColor = true;
+            this.usuariosyroles.Click += new System.EventHandler(this.usuariosyroles_Click);
             // 
             // productos
             // 
@@ -215,13 +217,14 @@
             this.productos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.productos.Location = new System.Drawing.Point(54, 312);
-            this.productos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.productos.Margin = new System.Windows.Forms.Padding(2);
             this.productos.Name = "productos";
             this.productos.Size = new System.Drawing.Size(111, 31);
             this.productos.TabIndex = 2;
             this.productos.Text = "Productos";
             this.productos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productos.UseVisualStyleBackColor = true;
+            this.productos.Click += new System.EventHandler(this.productos_Click);
             // 
             // inventario
             // 
@@ -232,7 +235,7 @@
             this.inventario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventario.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.inventario.Location = new System.Drawing.Point(54, 257);
-            this.inventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inventario.Margin = new System.Windows.Forms.Padding(2);
             this.inventario.Name = "inventario";
             this.inventario.Size = new System.Drawing.Size(111, 31);
             this.inventario.TabIndex = 1;
@@ -245,7 +248,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(36, 24);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(144, 127);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -257,7 +260,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelLateral);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_AdminMenuLateral";
             this.Size = new System.Drawing.Size(216, 885);
             this.panelLateral.ResumeLayout(false);
@@ -283,7 +286,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button inicio;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btncerrarsesion;
         private System.Windows.Forms.Button usuariosyroles;
         private System.Windows.Forms.Button productos;
         private System.Windows.Forms.Button inventario;

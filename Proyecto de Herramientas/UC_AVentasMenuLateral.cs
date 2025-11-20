@@ -16,5 +16,23 @@ namespace Proyecto_de_Herramientas
         {
             InitializeComponent();
         }
+
+        private void btninicio_Click(object sender, EventArgs e)
+        {
+            Home AVentasHome = (Home)FindForm();
+            AVentasHome.CargarPanelContenido(new UC_AVentasDashboard());
+        }
+
+        private void btnregistrarpedido_Click(object sender, EventArgs e)
+        {
+            Home AVentasHome = (Home)FindForm();
+            AVentasHome.CargarPanelContenido(new UC_AVentasRegistrarPedido());
+        }
+
+        private void btnenviarabodega_Click(object sender, EventArgs e)
+        {
+            Home AVentasHome = (Home)FindForm();
+            AVentasHome.CargarPanelContenido(new UC_AVentasEnviarBodega());
+        }
     }
 }

@@ -158,17 +158,41 @@
     <Compile Include="UC_AdminDashboard.Designer.cs">
       <DependentUpon>UC_AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_AdminProductos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AdminProductos.Designer.cs">
+      <DependentUpon>UC_AdminProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_AdminUsuariosyRoles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AdminUsuariosyRoles.Designer.cs">
+      <DependentUpon>UC_AdminUsuariosyRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_AVentasDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_AVentasDashboard.Designer.cs">
       <DependentUpon>UC_AVentasDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_AVentasEnviarBodega.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AVentasEnviarBodega.Designer.cs">
+      <DependentUpon>UC_AVentasEnviarBodega.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_AVentasMenuLateral.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_AVentasMenuLateral.Designer.cs">
       <DependentUpon>UC_AVentasMenuLateral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_AVentasRegistrarPedido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AVentasRegistrarPedido.Designer.cs">
+      <DependentUpon>UC_AVentasRegistrarPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_BodegaDashboard.cs">
       <SubType>UserControl</SubType>
@@ -255,8 +279,23 @@
     <EmbeddedResource Include="UC_AdminDashboard.resx">
       <DependentUpon>UC_AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_AdminProductos.resx">
+      <DependentUpon>UC_AdminProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_AdminUsuariosyRoles.resx">
+      <DependentUpon>UC_AdminUsuariosyRoles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_AVentasDashboard.resx">
       <DependentUpon>UC_AVentasDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_AVentasEnviarBodega.resx">
+      <DependentUpon>UC_AVentasEnviarBodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_AVentasMenuLateral.resx">
+      <DependentUpon>UC_AVentasMenuLateral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_AVentasRegistrarPedido.resx">
+      <DependentUpon>UC_AVentasRegistrarPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_BodegaDashboard.resx">
       <DependentUpon>UC_BodegaDashboard.cs</DependentUpon>
